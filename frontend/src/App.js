@@ -25,29 +25,30 @@ function App() {
 
   return (
     <div className = 'home'>
-      <div className = "intro">
-          {(currentView === 'image' || currentView === 'gif' ) && (
-            <img
-              src={logo}
-              alt="Initial Image"
-              className = "introImage"
-            />
-            
-          )}
-          {(currentView === 'gif' )  && (
-            <img
-            src={lightning}
-            alt="GIF Animation"
-            className = "introGIF"
-          />
-          )}
-        </div>
-        {currentView === 'homepage' && (
-          <div>
-            <h1>Welcome to My Website!</h1>
-            <p>This is the homepage content.</p>
-          </div>
-        )}
+      <div className = 'background'>
+
+      </div>
+      {(currentView === 'image' || currentView === 'gif' ) && (
+        <img
+          src={logo}
+          alt="Initial Image"
+          className = "introImage"
+        />
+        
+      )}
+      {(currentView === 'gif' )  && (
+        <img
+          src={lightning}
+          alt="GIF Animation"
+          className = "introGIF"
+      />
+      )}
+    {currentView === 'homepage' && (
+      <div>
+        <h1>Welcome to My Website!</h1>
+        <p>This is the homepage content.</p>
+      </div>
+      )}
     </div>
   );
 }

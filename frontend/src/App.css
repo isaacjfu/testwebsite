@@ -4,9 +4,15 @@
   height:100vh;
   position:relative;
   display:block;
-  background-color: black;
 }
 
+.background{
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  animation: fadeOut 5.1s ease forwards;
+  
+}
 .introImage{
   width: 200px;
   height: 200px;
@@ -30,6 +36,17 @@
   animation: fadeInOut 3s ease-in forwards;
 }
 
+@keyframes fadeOut{
+  0%{
+    background-color: black;
+  }
+  95.33% {
+    background-color: black;
+  }
+  100%{
+    background-color: transparent;
+  }
+}
 @keyframes fadeInOut {
   0% {
     opacity: 0;
