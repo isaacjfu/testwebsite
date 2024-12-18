@@ -1,4 +1,8 @@
 
+body, html{
+  overflow-x: hidden;
+}
+
 .home{
   width: 100vw;
   height:100vh;
@@ -36,6 +40,69 @@
   animation: fadeInOut 3s ease-in forwards;
 }
 
+.header{
+  position: absolute;
+  top: 0;
+  display: flex;
+  box-sizing:border-box;
+  overflow: hidden;
+  padding: 0 20px;
+  width: 100%;
+  height: 125px;
+  align-items:center;
+  justify-content:space-between;
+  z-index:3;
+  font-weight: bold;
+}
+.header-logo{
+  max-width: 100%;
+  max-height:100%;
+  object-fit: cover;
+}
+.span-button{
+  transition: text-decoration 0.3s ease;
+}
+.span-button:hover{
+  text-decoration: underline;
+  cursor:pointer;
+}
+.header-left{
+  padding: 50px;
+  display:flex;
+  margin-right:auto;
+  gap: 40px;
+}
+.header-right{
+  padding: 50px;
+  display:flex;
+  margin-left:auto;
+  gap: 40px;
+}
+.homepage-container{
+  scroll-snap-type: y-mandatory;
+  overflow-y: scroll;
+  height:100vh;
+}
+.homepage-card{
+  scroll-snap-align: start;
+  position:relative;
+  width:100%;
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center
+}
+.homepage-img{
+  width:100%;
+  object-fit: fill;
+}
+.homepage-content{
+  position:absolute;
+  z-index:2
+}
 @keyframes fadeOut{
   0%{
     background-color: black;
