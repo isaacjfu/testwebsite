@@ -10,12 +10,12 @@ function App() {
 
   //   // Transition to the GIF after 3 seconds
   //   if (currentView === 'image') {
-  //     timer = setTimeout(() => setCurrentView('gif'), 2000);
+  //     timer = setTimeout(() => setCurrentView('gif'), 500);
   //   }
 
   //   // Transition to the homepage after 5 seconds of showing the GIF
   //   if (currentView === 'gif') {
-  //     timer = setTimeout(() => setCurrentView('homepage'), 3000);
+  //     timer = setTimeout(() => setCurrentView('homepage'), 1000);
   //   }
 
   //   return () => clearTimeout(timer); // Clean up the timer
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className = 'home'>
-      {/* <Intro currentView = {currentView} /> */}
+      <Intro currentView = {currentView} />
       <Home currentView = {currentView} />
     </div>
   );

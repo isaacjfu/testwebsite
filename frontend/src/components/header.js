@@ -5,8 +5,8 @@ const Header = ( {} ) => {
     <div className = 'header'>
         
         <div className = 'header-left'>
-            <span className = 'span-button'> Vehicles </span>
-            <span className = 'span-button'> About Us </span>
+            <span className = 'span-button'> Models </span>
+            <span className = 'span-button'> About Isdera </span>
         </div>
 
         <img 
