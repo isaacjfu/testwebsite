@@ -1,7 +1,7 @@
 import '../App.css';
 import {useState,useEffect} from 'react';
-import Intro from './intro.js'
-import Home from './home.js'
+import Intro from '../components/intro.js'
+import Home from '../components/home.js'
 const Index = ( {} ) => {
   const [currentView, setCurrentView] = useState('homepage');
 

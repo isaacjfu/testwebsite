@@ -10,8 +10,16 @@ const Home = ( {currentView} ) => {
             {(currentView === 'homepage' )  && (
             <div>
                 <div className = 'homepage-container'>
-                    <Header/>
                     <div className = 'homepage-card'>
+                        <Header/>
+                        <div className = 'overlay-card'>
+                            $199/mo Leasing
+                            <div className = 'overlay-button-container'>
+                                <button className = 'overlay-button'> Order Commendatore </button>
+                                <button className = 'overlay-button'> Order Imperator </button>
+                            </div>
+
+                        </div>
                         <img
                             src = {first_card}
                             alt = "Stock Image"

@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Index from './components/index.js';
-import About from './components/about.js';
-
+import Index from './pages/index.js';
+import About from './pages/about.js';
+import Login from './pages/login.js';
+import TestDrive from './pages/TestDrive.js'
+import Model from './pages/model.js'
 function App() {
   return (
     <Router>
@@ -10,6 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/model" element={<Model/>} />
+          <Route path="/testDrive" element={<TestDrive/>} />
         </Routes>
       </div>
     </Router>
