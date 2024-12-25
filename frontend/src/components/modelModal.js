@@ -1,10 +1,12 @@
 import '../App.css';
 import {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import imperator from '../resources/imperator.png'
 import commendatore from '../resources/commendatore.png'
 import silverArrow from '../resources/silverArrow.png'
 
 const ModelModal = ({setClose}) => {
+  const navigate = useNavigate()
   const handleClick = () => {
     setClose(false)
   }
@@ -14,6 +16,31 @@ const ModelModal = ({setClose}) => {
     }
   };
 
+  const handleModelClick = (modelType) => {
+    console.log("hello")
+    console.log(modelType)
+    switch(modelType){
+        case 'commendatore':
+            navigate('/commendatore')
+            break;
+        case 'imperator':
+            navigate('/imperator')
+            break;
+        case 'silverArrow':
+            navigate('/silverArrow')
+            break;
+    }
+  }
+
+  const handleCClick = () => {
+    navigate('/commendatore')
+  }
+  const handleIClick = () => {
+    navigate('/imperator')
+  }
+  const handleSClick = () => {
+    navigate('/silverArrow')
+  }
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
     return () => {
@@ -29,22 +56,25 @@ const ModelModal = ({setClose}) => {
                 <img
                 src = {commendatore}
                 className = 'modal-card-image'
+                onClick = {handleCClick}
                 />
-                <span className = 'modal-card-info'> Commendatore </span>
+                <span className = 'modal-card-info' onClick = {handleCClick}> Commendatore </span>
             </div>
             <div className = 'modal-card'>
                 <img
                 src = {imperator}
                 className = 'modal-card-image'
+                onClick = {handleIClick}
                 />
-                <span className = 'modal-card-info'> Imperator </span>
+                <span className = 'modal-card-info' onClick = {handleIClick}> Imperator </span>
             </div>
             <div className = 'modal-card'>
                 <img
                 src = {silverArrow}
                 className = 'modal-card-image'
+                onClick = {handleSClick}
                 />   
-                <span className = 'modal-card-info'> Silver Arrow </span>          
+                <span className = 'modal-card-info' onClick = {handleSClick}> Silver Arrow </span>          
             </div>
         </div>
     </div>

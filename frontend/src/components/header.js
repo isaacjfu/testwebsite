@@ -8,7 +8,7 @@ const Header = ( {} ) => {
   const [showModal, setShowModal] = useState(false)
 
   const modelOnClick = () => {
-    navigate('/model')
+    setShowModal(true)
   }
 
   const aboutOnClick = () => {
@@ -31,7 +31,7 @@ const Header = ( {} ) => {
     <div className = 'header-container'>
       <div className = {`header ${showModal ? 'header-bg-modal-open' : ''}`}>
           <div className = 'header-middle'>
-            <span className = 'span-button' onClick= {modelOnClick} onMouseEnter={()=> setShowModal(true)}> Models </span>
+            <span className = 'span-button' onClick= {modelOnClick}> Models </span>
             <span className = 'span-button' onClick= {aboutOnClick}> About Isdera </span>
             
             <img 

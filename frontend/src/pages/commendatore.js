@@ -1,6 +1,6 @@
 import '../App.css';
 import Header from '../components/header.js'
-const Model = ( {} ) => {
+const Commendatore = ( {} ) => {
 
   return (
     <div>
@@ -12,4 +12,4 @@ const Model = ( {} ) => {
 
 }
 
-export default Model
+export default Commendatore

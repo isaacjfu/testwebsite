@@ -4,7 +4,9 @@ import Index from './pages/index.js';
 import About from './pages/about.js';
 import Login from './pages/login.js';
 import TestDrive from './pages/TestDrive.js'
-import Model from './pages/model.js'
+import SilverArrow from './pages/silverArrow.js'
+import Commendatore from './pages/commendatore.js';
+import Imperator from './pages/imperator.js';
 function App() {
   return (
     <Router>
@@ -13,7 +15,9 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/model" element={<Model/>} />
+          <Route path="/silverArrow" element={<SilverArrow/>} />
+          <Route path="/commendatore" element={<Commendatore/>} />
+          <Route path="/imperator" element={<Imperator/>} />
           <Route path="/testDrive" element={<TestDrive/>} />
         </Routes>
       </div>
