@@ -3,26 +3,9 @@ import logo from '../resources/isderalogo_text2.png'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import {useState,useEffect} from 'react';
 import ModelModal from './modelModal.js'
-const Header = ( {} ) => {
+const Header = ( {isScrolled} ) => {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const handleScroll = () => {
-    console.log('hi')
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const modelOnClick = () => {
     setShowModal(true)
