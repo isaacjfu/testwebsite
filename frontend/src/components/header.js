@@ -8,11 +8,20 @@ const Header = ( {} ) => {
   const [showModal, setShowModal] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleScroll = () => {
+    console.log('hi')
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-     console.log('hi')
-    };
     window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const modelOnClick = () => {
@@ -37,7 +46,7 @@ const Header = ( {} ) => {
 
   return (
     <div className = 'header-container'>
-      <div className = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+      <div className = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'header-scrolled' : ''}`}>
           <div className = 'header-middle'>
             <span className = 'span-button' onClick= {modelOnClick}> Models </span>
             <span className = 'span-button' onClick= {aboutOnClick}> About Isdera </span>

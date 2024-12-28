@@ -14,12 +14,6 @@ const Home = ( {currentView} ) => {
     const handleIClick = () => {
         navigate('/imperator')
     }
-    useEffect(() => {
-      const handleScroll = () => {
-       console.log('hi')
-      };
-      window.addEventListener('scroll', handleScroll);
-    }, []);
     return (
         <div>
             {(currentView === 'homepage' )  && (

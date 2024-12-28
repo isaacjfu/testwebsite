@@ -10,6 +10,9 @@ p {
   line-height:1.8;
   font-size: 20px;
 }
+.test{
+  height:2000px;
+}
 .home{
   width:100vw;
   height:100vh;
@@ -66,7 +69,7 @@ p {
 .header-bg-modal-open{
   background-color: white;
 }
-.header.scrolled{
+.header-scrolled{
   background-color: white; /* Optional solid color for fixed state */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for fixed state */
 }
