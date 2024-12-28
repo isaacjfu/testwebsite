@@ -6,6 +6,14 @@ import ModelModal from './modelModal.js'
 const Header = ( {} ) => {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+     console.log('hi')
+    };
+    window.addEventListener('scroll', handleScroll);
+  }, []);
 
   const modelOnClick = () => {
     setShowModal(true)
@@ -29,13 +37,13 @@ const Header = ( {} ) => {
 
   return (
     <div className = 'header-container'>
-      <div className = {`header ${showModal ? 'header-bg-modal-open' : ''}`}>
+      <div className = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'scrolled' : ''}`}>
           <div className = 'header-middle'>
             <span className = 'span-button' onClick= {modelOnClick}> Models </span>
             <span className = 'span-button' onClick= {aboutOnClick}> About Isdera </span>
-            
-            <img 
-                className = 'header-logo'             
+
+            <img
+                className = 'header-logo'
                 src={logo}
                 alt="Initial Image"
                 onClick ={logoOnClick}
@@ -43,11 +51,11 @@ const Header = ( {} ) => {
             <span className = 'span-button' onClick= {testOnClick}> Request Test Drive </span>
             <span className = 'span-button' onClick= {signIn}> Sign In </span>
 
-          </div> 
+          </div>
       </div>
-      {showModal ? 
+      {showModal ?
             (<ModelModal setClose = {setShowModal}/>)
-            : 
+            :
             (<></>)
       }
     </div>

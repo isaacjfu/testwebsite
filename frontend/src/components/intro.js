@@ -5,8 +5,7 @@ import lightning from '../resources/lightning2.gif'
 const Intro = ( {currentView} ) => {
 
   return (
-    <div>
-        <div className = 'background'></div>
+      <div className = 'background'>
         {(currentView === 'image' || currentView === 'gif' ) && (
         <img
             src={logo}
@@ -21,7 +20,7 @@ const Intro = ( {currentView} ) => {
             className = "introGIF"
         />
         )}
-    </div>
+      </div>
 
   )
 
