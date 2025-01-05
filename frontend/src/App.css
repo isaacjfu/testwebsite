@@ -70,7 +70,7 @@ p {
   background-color: white;
 }
 .header-scrolled{
-  background-color: white; /* Optional solid color for fixed state */
+  background: linear-gradient(60deg, #74b8e6, #16202e);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for fixed state */
 }
 .modal{
@@ -87,6 +87,7 @@ p {
   z-index:3;
   animation: modalFadeIn 0.5s ease-out forwards;
 }
+
 .modal-car-container{
   display:flex;
   flex-direction: row;
@@ -192,6 +193,7 @@ p {
   cursor: pointer;
 }
 .homepage-img{
+  width:100%;
   object-fit: fill;
 }
 .homepage-content{
@@ -210,10 +212,35 @@ p {
   padding-bottom: 20px;
 }
 
+.homepage-img-card{
+  width:40%;
+  height:20%;
+  object-fit: scale-down;
+}
 .homepage-text-card h1{
   font-weight: 550;
 }
 
+.about-container{
+  scroll-snap-type: y-mandatory;
+  background: linear-gradient(60deg, #74b8e6, #16202e);
+  overflow-y: auto;
+  width:100%;
+  height:100vh;
+}
+.about-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+.grid-card {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+}
 @keyframes modalFadeIn {
   0% {
     opacity:0;

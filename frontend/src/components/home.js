@@ -9,6 +9,7 @@ const Home = ( {currentView} ) => {
     let secondCardText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     let navigate = useNavigate()
     const [isScrolled, setIsScrolled] = useState(false);
+    const [containerName, setContainerName] = useState('.homepage-container')
 
     const handleCClick = () => {
         navigate('/commendatore')
@@ -16,7 +17,6 @@ const Home = ( {currentView} ) => {
     const handleIClick = () => {
         navigate('/imperator')
     }
-
     const handleScroll = () => {
       const container = document.querySelector('.homepage-container');
       if (container.scrollTop > 0) {
