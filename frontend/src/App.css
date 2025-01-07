@@ -221,6 +221,44 @@ p {
   font-weight: 550;
 }
 
+.homepage-text-header-card{
+  height:80%;
+  width:100%;
+  position: absolute;
+  bottom:0;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.testdrive-car-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  width:100%;
+  flex-wrap: wrap;
+}
+.testdrive-card{
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
+  padding:10px;
+  text-align:center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.testdrive-card.highlighted{
+  background-color: lightblue;
+  border-color:blue;
+}
+.testdrive-card-image{
+  width:100%;
+  height:80%;
+  object-fit: contain;
+}
+
 .about-container{
   scroll-snap-type: y-mandatory;
   background: linear-gradient(60deg, #74b8e6, #16202e);

@@ -16,22 +16,6 @@ const ModelModal = ({setClose}) => {
     }
   };
 
-  const handleModelClick = (modelType) => {
-    console.log("hello")
-    console.log(modelType)
-    switch(modelType){
-        case 'commendatore':
-            navigate('/commendatore')
-            break;
-        case 'imperator':
-            navigate('/imperator')
-            break;
-        case 'silverArrow':
-            navigate('/silverArrow')
-            break;
-    }
-  }
-
   const handleCClick = () => {
     navigate('/commendatore')
   }
