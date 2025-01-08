@@ -73,20 +73,20 @@ const TestDrive = ( {} ) => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
                 <div className="request-form-group">
-                  <input type="text" id="dealership" placeholder='* Select your dealership' required />
+                  <input type="text" id="dealership" placeholder='*Select your dealership' required />
                 </div>
                 <h1>Your personal details</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
                   <div className="request-form-group">
-                    <input type="text" id="fname" placeholder='* First Name' required />
-                    <input type="text" id="lname" placeholder='* Last Name' required />
-                    <input type="text" id="phone" placeholder='* Mobile/Cell Number' required />
-                    <input type="text" id="email" placeholder='* Email' required />
-                    <input type="text" id="city" placeholder='* City' required />
-                    <input type="text" id="location" placeholder='* Location' required />
+                    <input type="text" id="fname" placeholder='*First Name' required />
+                    <input type="text" id="lname" placeholder='*Last Name' required />
+                    <input type="text" id="phone" placeholder='*Mobile/Cell Number' required />
+                    <input type="text" id="email" placeholder='*Email' required />
+                    <input type="text" id="city" placeholder='*City' required />
+                    <input type="text" id="location" placeholder='*Location' required />
                 </div>
-                <h1>Marketing Preferences</h1>
+                <h1>Contact preferences</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.</p>
                 <div className="request-form-radio-group">
@@ -139,7 +139,6 @@ const TestDrive = ( {} ) => {
           </div>
 
         </div>
-        <Footer/>
     </div>
 
   )

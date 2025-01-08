@@ -4,6 +4,22 @@ import {useState,useEffect} from 'react';
 import stockImage from '../resources/stock_person.jpg'
 import visionImage from '../resources/manycars.jpg'
 import Footer from '../components/footer.js'
+
+const GridCard = ( {name,title,image} ) => {
+
+  return (
+    <div className = 'grid-card'>
+      <img
+        src = {image}
+      />
+      <div className = 'grid-card-info'>
+        <span className = 'grid-card-info-name'>{name}</span>
+        <span className = 'grid-card-info-title'> {title} </span>
+      </div>
+  </div>
+  )
+
+}
 const About = ( {} ) => {
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -51,49 +67,12 @@ const About = ( {} ) => {
         </div>
         <div className = 'homepage-card'>
           <div className = 'about-grid-container'>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-
-              <p>John Smith</p>
-              <span> Chief Executive Officer </span>
-            </div>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-              <p>Ken Adams</p>
-              <span> Chief Technology Officer </span>
-            </div>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-              <p>John Smith</p>
-              <span> President </span>              
-            </div>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-              <p>John Smith</p>
-              <span> Chief Financial Officer </span>
-            </div>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-              <p>John Smith</p>
-              <span> Chief Marketing Adviser </span>
-            </div>
-            <div className = 'grid-card'>
-              <img
-                src = {stockImage}
-              />
-              <p>John Smith</p>
-              <span> Chief Operating Officer </span>
-            </div>
+            <GridCard name = 'George Washington' title = 'Chief Executive Officer' image = {stockImage} />
+            <GridCard name = 'John Adams' title = 'Chief Technology Officer' image = {stockImage} />
+            <GridCard name = 'Thomas Jefferson' title = 'Chief Marketing Officer' image = {stockImage} />
+            <GridCard name = 'James Madison' title = 'Chief Human Resources Officer' image = {stockImage} />
+            <GridCard name = 'James Monroe' title = 'Chief Security Officer' image = {stockImage} />
+            <GridCard name = 'John Quincy Adams' title = 'Chief Financial Officer' image = {stockImage} />
           </div>
         </div>
         <Footer/>

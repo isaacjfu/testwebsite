@@ -34,7 +34,7 @@ const ModelModal = ({setClose}) => {
 
   return (
     <div className = "modal open">
-        <span onClick ={handleClick} className = 'modal-close'> Close X </span>
+        <span onClick ={handleClick} className = 'modal-close'> X </span>
         <div className = 'modal-car-container'>
             <div className = 'modal-card'>
                 <img
