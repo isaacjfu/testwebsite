@@ -2,6 +2,7 @@ import '../App.css';
 import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
 import first_card from '../resources/isdera_silverarrow.jpg'
+import Footer from '../components/footer.js'
 const SilverArrow = ( {} ) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const handleScroll = () => {
@@ -30,6 +31,7 @@ const SilverArrow = ( {} ) => {
               className = 'homepage-img'
           />
         </div>
+        <Footer/>
     </div>
 
   )

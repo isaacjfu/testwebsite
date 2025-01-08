@@ -1,6 +1,7 @@
 import '../App.css';
 import Header from '../components/header.js'
 import first_card from '../resources/1993isdera.jpg'
+import Footer from '../components/footer.js'
 import {useState,useEffect} from 'react';
 const Commendatore = ( {} ) => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,7 @@ const Commendatore = ( {} ) => {
               className = 'homepage-img'
           />
         </div>
+        <Footer/>
     </div>
 
   )

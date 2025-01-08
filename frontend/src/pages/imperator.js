@@ -2,6 +2,7 @@ import '../App.css';
 import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
 import first_card from '../resources/Isdera_imperator_1.jpg'
+import Footer from '../components/footer.js'
 const Imperator = ( {} ) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const handleScroll = () => {
@@ -30,6 +31,7 @@ const Imperator = ( {} ) => {
               className = 'homepage-img'
           />
         </div>
+        <Footer/>
     </div>
 
   )

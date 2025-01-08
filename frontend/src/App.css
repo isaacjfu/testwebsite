@@ -68,6 +68,7 @@ p {
 }
 .header-bg-modal-open{
   background-color: white;
+  border-radius: 10px;
 }
 .header-scrolled{
   background: linear-gradient(60deg, #74b8e6, #16202e);
@@ -278,6 +279,88 @@ p {
   background-color: transparent;
   padding: 20px;
   text-align: center;
+}
+
+.request-form {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.request-form > h1 {
+  font-weight: 500;
+  margin: 20px auto;
+}
+.request-form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.request-form-radio-group {
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+.request-form-radio-group-card {
+  width:30%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.request-form-radio-group-card-radio {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+.request-form-group > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 16px;
+  padding: 10px 10px;
+  margin:20px 0px;
+  background: none;
+}
+
+.request-form-group >input:focus {
+  border-bottom: 2px solid blue;
+}
+
+.request-form-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: black;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.request-form > button {
+  width: 20%;
+  padding: 10px;
+  margin: 40px;
+  font-size: 16px;
+  float:right;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.request-form-radio-group-card-label{
+  margin:5px 10px;
+}
+input[type='radio']{
+  margin-right:5px;
+  accent-color:gray;
+}
+
+.footer{
+  position: static;
 }
 @keyframes modalFadeIn {
   0% {

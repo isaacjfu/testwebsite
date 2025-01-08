@@ -1,6 +1,7 @@
 import '../App.css';
 import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
+import Footer from '../components/footer.js'
 const Login = ( {} ) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const handleScroll = () => {
@@ -22,6 +23,7 @@ const Login = ( {} ) => {
   return (
     <div className = 'login-container'>
         <Header isScrolled={isScrolled} />
+        <Footer/>
     </div>
 
   )

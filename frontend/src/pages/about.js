@@ -3,6 +3,7 @@ import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
 import stockImage from '../resources/stock_person.jpg'
 import visionImage from '../resources/manycars.jpg'
+import Footer from '../components/footer.js'
 const About = ( {} ) => {
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -95,6 +96,7 @@ const About = ( {} ) => {
             </div>
           </div>
         </div>
+        <Footer/>
     </div>
 
   )
