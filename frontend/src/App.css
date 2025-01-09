@@ -134,12 +134,25 @@ p {
   width:5em;
   cursor: pointer;
 }
+
 .span-button{
-  transition: text-decoration 0.3s ease;
+  display: inline-block; 
+  position: relative; 
+  text-decoration: none; 
+  cursor: pointer; 
 }
-.span-button:hover{
-  text-decoration: underline;
-  cursor:pointer;
+.span-button::after{
+  content: '';
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0; 
+  height: 2px;
+  background-color: black; 
+  transition: width 0.3s ease-in-out; 
+}
+.span-button:hover::after{
+  width: 100%; 
 }
 .header-middle{
   padding: 20px;
@@ -197,6 +210,10 @@ p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+.overlay-button:hover{
+  background-color: #2e7ad8;
 }
 .homepage-img{
   width:100%;
@@ -552,6 +569,7 @@ input[type='radio']{
 .footer-icon-img{
   width:24px;
   height:24px;
+  cursor: pointer;
 }
 .footer-copyright {
   width:80%;
@@ -568,6 +586,7 @@ input[type='radio']{
 .request-form > h2{
   text-align: center;
 }
+
 @keyframes modalFadeIn {
   0% {
     opacity:0;

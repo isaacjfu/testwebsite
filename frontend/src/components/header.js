@@ -31,7 +31,7 @@ const Header = ( {isScrolled, white, setWhite} ) => {
     <div class = 'header-container'>
       <div class = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'header-scrolled' : ''}`}>
           <div class = 'header-middle'>
-            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
+            <span class = {`span-button underline-animation ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
             <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> About Isdera </span>
 
             <img
