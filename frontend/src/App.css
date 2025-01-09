@@ -9,9 +9,14 @@ p {
   max-width: 80ch;
   line-height:1.8;
   font-size: 20px;
+  text-align:left;
 }
-.test{
-  height:2000px;
+
+.white_text{
+  color: white;
+}
+.white_img{
+  filter: invert(100%);
 }
 .home{
   width:100vw;
@@ -23,20 +28,19 @@ p {
   width:100vw;
   height:100vh;
   position: absolute;
-  animation: fadeOut 3.1s ease forwards;
+  animation: fadeOut 1.4s ease forwards;
 
 }
 .introImage{
-  width: 200px;
-  height: 200px;
+  width: 14%;
+  height: 14%;
   position: absolute;
   object-fit: contain;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left:50%;
+  top: 43%;
+  left: 43%;
   z-index: 2;
   filter: invert(100%);
-  animation: fadeInOut 1.5s ease-in forwards;
+  animation: fadeInOut 1.4s ease-in forwards;
 }
 
 .introGIF{
@@ -61,7 +65,7 @@ p {
   justify-content:center;
   text-align: center;
   align-content: center;
-  z-index:3;
+  z-index:5;
   font-weight: 500;
   font-size: 14px;
   transition: transform 0.3s ease-in-out; /* Smooth slide-up effect */
@@ -159,6 +163,7 @@ p {
   background-size:cover;
   background-position:center;
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align:center
@@ -172,7 +177,8 @@ p {
   gap: 10px;
   display:flex;
   flex-direction: column;
-  top: 150px;
+  top: 20%;
+  z-index:4;
 }
 .overlay-button-container{
   display:flex;
@@ -196,12 +202,15 @@ p {
 .homepage-img{
   width:100%;
   object-fit: fill;
+  mask-image: linear-gradient(to bottom, black 97%, transparent 100%);
 }
 .homepage-content{
   position:absolute;
   z-index:2
 }
 .homepage-text-card{
+  position: relative;
+  margin:40px;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -217,6 +226,7 @@ p {
   width:40%;
   height:20%;
   object-fit: scale-down;
+
 }
 .homepage-text-card h1{
   font-weight: 550;
@@ -259,7 +269,11 @@ p {
   height:80%;
   object-fit: contain;
 }
-
+.about-subcontainer{
+  display:flex;
+  flex-direction: column;
+  gap:100px;
+}
 .about-container{
   scroll-snap-type: y-mandatory;
   background: white;
@@ -274,13 +288,96 @@ p {
   gap: 20px; /* Space between cards */
   padding: 20px;
 }
-
+.about-header-card{
+  scroll-snap-align: start;
+  position:relative;
+  width:100%;
+  height:50%;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center
+}
+.about-filler{
+  width:100%;
+  height:40%;
+  position: relative;
+}
+.about-img-card{
+  width:100%;
+  height:100%;
+  object-fit: fill;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  z-index:0;
+}
+.about-overlay-card{
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center
+}
+.about-overlay{
+  position: absolute;
+  font-weight: 600;
+  font-size: 40px;
+  width: 400px;
+  height: 50%;
+  gap: 10px;
+  display:flex;
+  flex-direction: column;
+  top: 50%;
+  z-index:2;
+  color:white;
+}
+.about-card{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+}
+.about-card-three{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:0px;
+  width:100%;
+  flex-wrap:wrap; 
+}
+.about-card-three-card{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  gap:10px;
+  width:30%;
+}
+.about-card-three-card > p{
+  position: relative;
+  left:5%;
+}
+.about-card-three-card > h3{
+  position: relative;
+  top:2%;
+}
+.about-card-three-card-img{
+  height:60%;
+  width:90%;
+}
 .grid-card {
   display:flex;
   flex-direction: column;
   padding: 20px;
   gap:40px;
   text-align: center;
+}
+.grid-card-img{
+  width:300px;
+  height:350px;
 }
 .grid-card-info{
   display:flex;
@@ -354,7 +451,7 @@ p {
 .request-form > button {
   width: 20%;
   padding: 10px;
-  margin: 40px;
+  margin-top: 40px;
   font-size: 16px;
   float:right;
   background-color: gray;
@@ -363,6 +460,9 @@ p {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
+}
+.request-form > button:hover {
+  background-color: black;
 }
 .request-form-radio-group-card-label{
   margin:5px 10px;
@@ -375,6 +475,57 @@ input[type='radio']{
 .footer{
   position: static;
 }
+
+.accordion {
+  width: 65%;
+  margin: 0 auto;
+  border-top: 2px solid #ccc;
+  overflow: hidden;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title {
+  flex: 1;
+  text-align: left;
+}
+
+.accordion-icon {
+  flex: 0;
+  font-size: 18px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fff;
+  font-size: 14px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.accordion-content > p {
+  position: relative;
+  bottom:20px;
+}
+.accordion-content.show {
+  max-height: 100px; /* Adjust based on your content height */
+}
+
+
 @keyframes modalFadeIn {
   0% {
     opacity:0;

@@ -5,6 +5,7 @@ import Footer from '../components/footer.js'
 import {useState,useEffect} from 'react';
 const Commendatore = ( {} ) => {
     const [isScrolled, setIsScrolled] = useState(false);
+
     const handleScroll = () => {
       const container = document.querySelector('.homepage-container');
       if (container.scrollTop > 0) {
@@ -23,7 +24,7 @@ const Commendatore = ( {} ) => {
     }, []);
   return (
     <div className = 'homepage-container'>
-        <Header isScrolled={isScrolled} />
+        <Header isScrolled={isScrolled}/>
         <div className= 'homepage-card'>
           <img
               src = {first_card}

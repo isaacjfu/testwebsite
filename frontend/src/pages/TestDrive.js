@@ -51,7 +51,8 @@ const TestDrive = ( {} ) => {
 
 
   return (
-    <div className = 'homepage-container'>
+    <div>
+      <div className = 'homepage-container'>
         <Header isScrolled={isScrolled} />
         <div className = 'homepage-card'>
           <div className = 'homepage-text-header-card'>
@@ -130,7 +131,7 @@ const TestDrive = ( {} ) => {
                     </div>
                   </div>
                 </div>
-                <button className='request-form-submit-button' type="submit">Submit</button>
+                <button type="submit">Submit</button>
               </form>
             )
             :
@@ -139,8 +140,9 @@ const TestDrive = ( {} ) => {
           </div>
 
         </div>
+        <Footer/>
+      </div>
     </div>
-
   )
 
 }

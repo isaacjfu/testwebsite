@@ -5,10 +5,14 @@ import imperator from '../resources/imperator.png'
 import commendatore from '../resources/commendatore.png'
 import silverArrow from '../resources/silverArrow.png'
 
-const ModelModal = ({setClose}) => {
+const ModelModal = ({setClose, white, setWhite}) => {
   const navigate = useNavigate()
+  const [hasWhite, setHasWhite] = useState(false)
   const handleClick = () => {
     setClose(false)
+    if(hasWhite == true){
+      setWhite(!white)
+    }
   }
   const handleKeyDown = (event) => {
     if (event.key === 'Escape') {
@@ -26,6 +30,10 @@ const ModelModal = ({setClose}) => {
     navigate('/silverArrow')
   }
   useEffect(() => {
+    if (white == true){
+      setWhite(false)
+      setHasWhite(true)
+    }
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
