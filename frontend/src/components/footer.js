@@ -18,8 +18,8 @@ const Footer = ( {} ) => {
   const handleLogoClick = () => {
     navigate('/')
   }
-  const handleLoginClick = () => {
-    navigate('/login')
+  const handleAccountClick = () => {
+    navigate('/account')
   }
   return (
     <footer class='footer'>
@@ -30,7 +30,7 @@ const Footer = ( {} ) => {
             class = 'footer-logo-img'
             onClick={handleLogoClick}
         />
-        <span class = 'span-button' onClick ={handleLoginClick}> Login </span>
+        <span class = 'span-button' onClick ={handleAccountClick}> Account </span>
       </div>
       <div class = 'footer-icons'>
         <img

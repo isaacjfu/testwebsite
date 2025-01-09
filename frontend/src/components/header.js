@@ -23,8 +23,8 @@ const Header = ( {isScrolled, white, setWhite} ) => {
     navigate('/testDrive')
   }
 
-  const signIn = () => {
-    navigate('/login')
+  const accountOnClick = () => {
+    navigate('/account')
   }
 
   return (
@@ -41,7 +41,7 @@ const Header = ( {isScrolled, white, setWhite} ) => {
                 onClick ={logoOnClick}
             />
             <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {testOnClick}> Request Test Drive </span>
-            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {signIn}> Sign In </span>
+            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {accountOnClick}> Account </span>
 
           </div>
       </div>
