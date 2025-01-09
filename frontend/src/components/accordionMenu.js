@@ -15,17 +15,17 @@ const Accordion = () => {
   ];
 
   return (
-    <div className="accordion">
+    <div class="accordion">
       {sections.map((section, index) => (
-        <div className="accordion-item" onClick={() => toggleAccordion(index)} key={index}>
-          <span className="accordion-header">
-            <h4 className="accordion-title">{section.title}</h4>
-            <h4 className="accordion-icon">
+        <div class="accordion-item" onClick={() => toggleAccordion(index)} key={index}>
+          <span class="accordion-header">
+            <h4 class="accordion-title">{section.title}</h4>
+            <h4 class="accordion-icon">
               {activeIndex === index ? "_" : "+"}
             </h4>
           </span>
           <div
-            className={`accordion-content ${
+            class={`accordion-content ${
               activeIndex === index ? "show" : ""
             }`}
           >

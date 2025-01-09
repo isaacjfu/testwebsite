@@ -18,14 +18,14 @@ import visionImage3 from '../resources/lightning.gif'
 const GridCard = ( {name,title,image} ) => {
 
   return (
-    <div className = 'grid-card'>
+    <div class = 'grid-card'>
       <img
         src = {image}
-        className = 'grid-card-img'
+        class = 'grid-card-img'
       />
-      <div className = 'grid-card-info'>
-        <span className = 'grid-card-info-name'>{name}</span>
-        <span className = 'grid-card-info-title'> {title} </span>
+      <div class = 'grid-card-info'>
+        <span class = 'grid-card-info-name'>{name}</span>
+        <span class = 'grid-card-info-title'> {title} </span>
       </div>
   </div>
   )
@@ -55,20 +55,20 @@ const About = ( {} ) => {
     }, []);
 
   return (
-    <div className = 'about-container'>
+    <div class = 'about-container'>
         <Header isScrolled={isScrolled} white = {white} setWhite = {setWhite}/>
-        <div className = 'about-header-card'>
-          <span className = "about-overlay">
+        <div class = 'about-header-card'>
+          <span class = "about-overlay">
               About Isdera
           </span>
           <img
             src = {top_image}
-            className = 'about-img-card'
+            class = 'about-img-card'
           />
         </div>
-        <div className = 'about-subcontainer'>
-          <div className = 'about-card'>
-            <div className = 'homepage-text-card'>
+        <div class = 'about-subcontainer'>
+          <div class = 'about-card'>
+            <div class = 'homepage-text-card'>
               <h1> Our Vision </h1>
               <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -76,13 +76,13 @@ const About = ( {} ) => {
                   dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
           </div>
-          <div className ='about-card'>
+          <div class ='about-card'>
             <h2> Our Values </h2>
-            <div className = 'about-card-three'>
-              <div className = 'about-card-three-card'>
+            <div class = 'about-card-three'>
+              <div class = 'about-card-three-card'>
                 <img
                   src = {visionImage}
-                  className = 'about-card-three-card-img'
+                  class = 'about-card-three-card-img'
                 />
                 <h3>Lorem ipsum</h3>
                 <p>
@@ -91,10 +91,10 @@ const About = ( {} ) => {
                   dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
               </div>
-              <div className = 'about-card-three-card'>
+              <div class = 'about-card-three-card'>
                   <img
                     src = {visionImage2}
-                    className = 'about-card-three-card-img'
+                    class = 'about-card-three-card-img'
                   />
                     <h3>Lorem ipsum</h3>
                   <p>
@@ -103,10 +103,10 @@ const About = ( {} ) => {
                   dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                   </p>
               </div>            
-              <div className = 'about-card-three-card'>
+              <div class = 'about-card-three-card'>
                   <img
                     src = {visionImage3}
-                    className = 'about-card-three-card-img'
+                    class = 'about-card-three-card-img'
                   />
                   <h3>Lorem ipsum</h3>
                   <p>
@@ -117,9 +117,9 @@ const About = ( {} ) => {
               </div>
             </div>
           </div>
-          <div className = 'about-card'>
+          <div class = 'about-card'>
             <h2>Our Staff</h2>
-            <div className = 'about-grid-container'>
+            <div class = 'about-grid-container'>
               <GridCard name = 'George Washington' title = 'Chief Executive Officer' image = {georgeWashington} />
               <GridCard name = 'John Adams' title = 'Chief Technology Officer' image = {johnAdams} />
               <GridCard name = 'Thomas Jefferson' title = 'Chief Marketing Officer' image = {thomasJefferson} />

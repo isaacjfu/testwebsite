@@ -21,8 +21,11 @@ const Login = ( {} ) => {
     };
   }, []);
   return (
-    <div className = 'login-container'>
+    <div class = 'login-container'>
         <Header isScrolled={isScrolled} />
+        <div class = ''>
+
+        </div>
         <Footer/>
     </div>
 

@@ -28,20 +28,20 @@ const Header = ( {isScrolled, white, setWhite} ) => {
   }
 
   return (
-    <div className = 'header-container'>
-      <div className = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'header-scrolled' : ''}`}>
-          <div className = 'header-middle'>
-            <span className = {`span-button ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
-            <span className = {`span-button ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> About Isdera </span>
+    <div class = 'header-container'>
+      <div class = {`header ${showModal ? 'header-bg-modal-open' : ''} ${isScrolled ? 'header-scrolled' : ''}`}>
+          <div class = 'header-middle'>
+            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
+            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> About Isdera </span>
 
             <img
-                className = {`header-logo ${white ? 'white_img' : ''}`}
+                class = {`header-logo ${white ? 'white_img' : ''}`}
                 src={logo}
                 alt="Initial Image"
                 onClick ={logoOnClick}
             />
-            <span className = {`span-button ${white ? 'white_text' : ''}`} onClick= {testOnClick}> Request Test Drive </span>
-            <span className = {`span-button ${white ? 'white_text' : ''}`} onClick= {signIn}> Sign In </span>
+            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {testOnClick}> Request Test Drive </span>
+            <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {signIn}> Sign In </span>
 
           </div>
       </div>

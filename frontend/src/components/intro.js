@@ -5,19 +5,19 @@ import lightning from '../resources/lightning2.gif'
 const Intro = ( {currentView} ) => {
 
   return (
-      <div className = 'background'>
+      <div class = 'background'>
         {(currentView === 'image' || currentView === 'gif' ) && (
         <img
             src={logo}
             alt="Initial Image"
-            className = "introImage"
+            class = "introImage"
         />
         )}
         {(currentView === 'gif' )  && (
         <img
             src={lightning}
             alt="GIF Animation"
-            className = "introGIF"
+            class = "introGIF"
         />
         )}
       </div>

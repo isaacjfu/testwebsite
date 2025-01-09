@@ -23,13 +23,13 @@ const Commendatore = ( {} ) => {
       };
     }, []);
   return (
-    <div className = 'homepage-container'>
+    <div class = 'homepage-container'>
         <Header isScrolled={isScrolled}/>
-        <div className= 'homepage-card'>
+        <div class= 'homepage-card'>
           <img
               src = {first_card}
               alt = "Stock Image"
-              className = 'homepage-img'
+              class = 'homepage-img'
           />
         </div>
         <Footer/>

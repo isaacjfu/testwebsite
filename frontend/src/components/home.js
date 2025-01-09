@@ -35,25 +35,25 @@ const Home = ( {currentView} ) => {
     }, []);
 
     return (
-        <div className = 'homepage-container'>
+        <div class = 'homepage-container'>
             {(currentView === 'homepage' )  && (
-              <div >
+              <div>
                   <Header isScrolled = {isScrolled}/>
-                  <div className = 'homepage-card'>
-                      <div className = 'overlay-card'>
+                  <div class = 'homepage-card'>
+                      <div class = 'overlay-card'>
                           $199/mo Leasing
-                          <div className = 'overlay-button-container'>
-                              <button className = 'overlay-button' onClick = {handleCClick}> Order Commendatore </button>
-                              <button className = 'overlay-button' onClick = {handleIClick}> Order Imperator </button>
+                          <div class = 'overlay-button-container'>
+                              <button class = 'overlay-button' onClick = {handleCClick}> Order Commendatore </button>
+                              <button class = 'overlay-button' onClick = {handleIClick}> Order Imperator </button>
                           </div>
                       </div>
                       <img
                           src = {first_card}
                           alt = "Stock Image"
-                          className = 'homepage-img'
+                          class = 'homepage-img'
                       />
                   </div>
-                  <div className = 'homepage-text-card'>
+                  <div class = 'homepage-text-card'>
                       <h1> Isdera Motors </h1>
                       <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -63,7 +63,7 @@ const Home = ( {currentView} ) => {
                       <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                       anim id est laborum.</p>
                   </div>
-                  <div className = 'homepage-text-card'>
+                  <div class = 'homepage-text-card'>
                     <h2> News  </h2>
                     <AccordionMenu/>
                   </div>

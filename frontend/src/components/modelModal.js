@@ -41,32 +41,32 @@ const ModelModal = ({setClose, white, setWhite}) => {
   }, []);
 
   return (
-    <div className = "modal open">
-        <span onClick ={handleClick} className = 'modal-close'> X </span>
-        <div className = 'modal-car-container'>
-            <div className = 'modal-card'>
+    <div class = "modal open">
+        <span onClick ={handleClick} class = 'modal-close'> X </span>
+        <div class = 'modal-car-container'>
+            <div class = 'modal-card'>
                 <img
                 src = {commendatore}
-                className = 'modal-card-image'
+                class = 'modal-card-image'
                 onClick = {handleCClick}
                 />
-                <span className = 'modal-card-info' onClick = {handleCClick}> Commendatore </span>
+                <span class = 'modal-card-info' onClick = {handleCClick}> Commendatore </span>
             </div>
-            <div className = 'modal-card'>
+            <div class = 'modal-card'>
                 <img
                 src = {imperator}
-                className = 'modal-card-image'
+                class = 'modal-card-image'
                 onClick = {handleIClick}
                 />
-                <span className = 'modal-card-info' onClick = {handleIClick}> Imperator </span>
+                <span class = 'modal-card-info' onClick = {handleIClick}> Imperator </span>
             </div>
-            <div className = 'modal-card'>
+            <div class = 'modal-card'>
                 <img
                 src = {silverArrow}
-                className = 'modal-card-image'
+                class = 'modal-card-image'
                 onClick = {handleSClick}
                 />   
-                <span className = 'modal-card-info' onClick = {handleSClick}> Silver Arrow </span>          
+                <span class = 'modal-card-info' onClick = {handleSClick}> Silver Arrow </span>          
             </div>
         </div>
     </div>
