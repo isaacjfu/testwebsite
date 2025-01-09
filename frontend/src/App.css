@@ -203,17 +203,17 @@ p {
   height:50px;
   justify-content: center;
   align-items: center;
-  background-color: #679ee0;
+  background-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:black;
   font-weight: 500;
-  border: none;
+  border: 2px solid grey;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .overlay-button:hover{
-  background-color: #2e7ad8;
+  background-color: lightblue;
 }
 .homepage-img{
   width:100%;
@@ -268,7 +268,6 @@ p {
 .testdrive-card{
   height: 150px;
   width: 150px;
-  border-radius: 8px;
   padding:10px;
   text-align:center;
   border: 1px solid gray;
@@ -443,7 +442,7 @@ p {
 .request-form-group > input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   outline: none;
   font-size: 16px;
   padding: 10px 10px;
@@ -470,22 +469,22 @@ p {
   margin-top: 40px;
   font-size: 16px;
   float:right;
-  background-color: gray;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 2px solid grey;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .request-form > button:hover {
-  background-color: black;
+  background-color: lightblue;
 }
 .request-form-radio-group-card-label{
   margin:5px 10px;
 }
 input[type='radio']{
   margin-right:5px;
-  accent-color:rgb(90, 147, 221);
+  accent-color:rgb(79, 128, 189);
 }
 
 .accordion {
@@ -551,8 +550,14 @@ input[type='radio']{
   display:flex;
   justify-content: center;
   align-items: center;
-  gap:20px;
-  padding:10px;
+  border-top: 1px solid black;
+  width:80%;
+  margin:0 auto;
+  gap:60px;
+  margin-top:100px;
+  margin-bottom:30px;
+  padding-top:30px;
+  padding-bottom:10px;
 }
 .footer-logo-img{
   width:45px;
@@ -563,8 +568,8 @@ input[type='radio']{
   display:flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: 40px;
+  margin-bottom:40px;
 }
 .footer-icon-img{
   width:24px;
@@ -574,7 +579,6 @@ input[type='radio']{
 .footer-copyright {
   width:80%;
   margin:0 auto;
-  border-top: 1px solid black;
   padding:10px;
   color: #555; 
 }

@@ -29,7 +29,7 @@ const Account = ( {} ) => {
         <form class='request-form'>
           <h2>Join Us</h2>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua </p>
+          incididunt ut labore et dolore magna aliqua. </p>
           <div class="request-form-group">
             <input type="text" id="fname" placeholder='*First Name' required />
             <input type="text" id="lname" placeholder='*Last Name' required />
