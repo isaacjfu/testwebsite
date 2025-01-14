@@ -139,7 +139,16 @@ p {
   width:5em;
   cursor: pointer;
 }
-
+.header-card{
+  transform: translateX(-10px);
+  display:flex;
+  height: 150px;
+  width: 150px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, border-color 0.3s;
+}
 .span-button{
   display: inline-block; 
   position: relative; 
@@ -161,11 +170,11 @@ p {
   width: 100%; 
 }
 .header-middle{
-  display:inline-flex;
+  display:flex;
   flex-direction: row;
   align-items:center;
   justify-items: center;
-  gap: 50px;
+  gap: 10px;
   margin: 0 auto;
 }
 .homepage-container{
