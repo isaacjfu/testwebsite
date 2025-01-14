@@ -150,24 +150,24 @@ p {
   transition: background-color 0.3s, border-color 0.3s;
 }
 .span-button{
-  display: inline-block; 
-  position: relative; 
-  text-decoration: none; 
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
   text-align: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 .span-button::after{
   content: '';
   position: absolute;
-  bottom: -5px; 
+  bottom: -5px;
   left: 0;
-  width: 0; 
+  width: 0;
   height: 2px;
-  background-color: black; 
-  transition: width 0.3s ease-in-out; 
+  background-color: black;
+  transition: width 0.3s ease-in-out;
 }
 .span-button:hover::after{
-  width: 100%; 
+  width: 100%;
 }
 .header-middle{
   display:flex;
@@ -187,7 +187,7 @@ p {
   scroll-snap-align: start;
   position:relative;
   width:100%;
-  height:100%;
+  height:100vh;
   background-size:cover;
   background-position:center;
   display:flex;
@@ -232,6 +232,7 @@ p {
   background-color: lightblue;
 }
 .homepage-img{
+  height:100%;
   width:100%;
   object-fit: fill;
   mask-image: linear-gradient(to bottom, black 97%, transparent 100%);
@@ -376,7 +377,7 @@ p {
   justify-content: center;
   gap:0px;
   width:100%;
-  flex-wrap:wrap; 
+  flex-wrap:wrap;
 }
 .about-card-three-card{
   display:flex;
@@ -555,8 +556,8 @@ input[type='radio']{
 .footer {
   position: relative;
   width: 100%;
-  text-align: center; 
-  font-size: 14px; 
+  text-align: center;
+  font-size: 14px;
   display:flex;
   flex-direction: column;
   z-index:1;
@@ -576,7 +577,7 @@ input[type='radio']{
 }
 .footer-bottom{
  display:flex;
- flex-direction: row; 
+ flex-direction: row;
  margin: 0 auto;
  width:80%;
  padding-bottom:40px;
@@ -618,7 +619,7 @@ input[type='radio']{
   width:80%;
   margin:0 auto;
   padding:10px;
-  color: #555; 
+  color: #555;
 }
 
 .header-filler{
