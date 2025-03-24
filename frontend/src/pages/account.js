@@ -3,26 +3,9 @@ import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
 import Footer from '../components/footer.js'
 const Account = ( {} ) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const handleScroll = () => {
-    const container = document.querySelector('.homepage-container');
-    if (container.scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    const container = document.querySelector('.homepage-container');
-    container.addEventListener('scroll', handleScroll);
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <div class = 'homepage-container'>
-        <Header isScrolled={isScrolled} />
+        <Header />
         <div class = 'header-filler'>
 
         </div>

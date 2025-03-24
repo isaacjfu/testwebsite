@@ -30,30 +30,13 @@ const TestDriveCard = ( {car_name, car_image, selectedCar, setSelectedCar} ) => 
   )
 }
 const TestDrive = ( {} ) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [selectedCar, setSelectedCar] = useState("")
 
-  const handleScroll = () => {
-    const container = document.querySelector('.homepage-container');
-    if (container.scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    const container = document.querySelector('.homepage-container');
-    container.addEventListener('scroll', handleScroll);
-    return () => {
-      container.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
 
   return (
     <div class = 'homepage-container'>
-        <Header isScrolled={isScrolled} />
+        <Header />
         <div class = 'homepage-card'>
           <div class = 'homepage-text-header-card'>
             <h1> Request a Test Drive </h1>

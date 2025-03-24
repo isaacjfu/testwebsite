@@ -33,30 +33,9 @@ const GridCard = ( {name,title,image} ) => {
 }
 const About = ( {} ) => {
 
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [white,setWhite] = useState(true)
-    const handleScroll = () => {
-      const container = document.querySelector('.about-container');
-      if (container.scrollTop > 0) {
-        setWhite(false)
-        setIsScrolled(true);
-      } else {
-        setWhite(true)
-        setIsScrolled(false);
-      }
-    };
-
-    useEffect(() => {
-      const container = document.querySelector('.about-container');
-      container.addEventListener('scroll', handleScroll);
-      return () => {
-        container.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-
   return (
     <div class = 'about-container'>
-        <Header isScrolled={isScrolled} white = {white} setWhite = {setWhite}/>
+        <Header/>
         <div class = 'about-header-card'>
           <span class = "about-overlay">
               About Isdera

@@ -8,8 +8,6 @@ import AccordionMenu from './accordionMenu.js'
 // import first_card from '../resources/1993isdera.jpg'
 const Home = ( {currentView} ) => {
     let navigate = useNavigate()
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [containerName, setContainerName] = useState('.homepage-container')
 
     const handleCClick = () => {
         navigate('/commendatore')
@@ -17,63 +15,32 @@ const Home = ( {currentView} ) => {
     const handleIClick = () => {
         navigate('/imperator')
     }
-    const handleScroll = () => {
-      const container = document.querySelector('.homepage-container');
-      if (container.scrollTop > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    useEffect(() => {
-      const container = document.querySelector('.homepage-container');
-      container.addEventListener('scroll', handleScroll);
-      return () => {
-        container.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-
     return (
         <div class = 'homepage-container'>
-            {(currentView === 'homepage' )  && (
-              <div>
-                  <Header isScrolled = {isScrolled}/>
-                  <div class = 'homepage-card'>
-                      <div class = 'overlay-card'>
-                          $199/mo Leasing
-                          <div class = 'overlay-button-container'>
-                              <button class = 'overlay-button' onClick = {handleCClick}> Order Commendatore </button>
-                              <button class = 'overlay-button' onClick = {handleIClick}> Order Imperator </button>
-                          </div>
-                      </div>
-                      <img
-                          src = {first_card}
-                          alt = "Stock Image"
-                          class = 'homepage-img'
-                      />
-                  </div>
-                  <div class = 'homepage-text-card'>
-                      <h1> Isdera Motors </h1>
-                      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                      </p>
-                      <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                      anim id est laborum.</p>
-                  </div>
-                  <div class = 'homepage-text-card'>
-                    <h2> News  </h2>
-                    <AccordionMenu/>
-                  </div>
-                  <Footer/>
-              </div>
-            )}
+          <Header/>
+          <div class = 'first-card'>
+              <img
+                  src = {first_card}
+                  alt = "Stock Image"
+                  class = 'homepage-img'
+              />
+          </div>
+          <div class = 'homepage-text-card'>
+              <h1> Isdera Motors </h1>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+              <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.</p>
+          </div>
+          <div class = 'homepage-text-card'>
+            <h2> News  </h2>
+            <AccordionMenu/>
+          </div>
+          <Footer/>
         </div>
-
-
-
   )
 
 }
