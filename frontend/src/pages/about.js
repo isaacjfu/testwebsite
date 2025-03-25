@@ -1,7 +1,7 @@
 import '../App.css';
 import Header from '../components/header.js'
 import Footer from '../components/footer.js'
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useRef} from 'react';
 
 import top_image from '../resources/about_top.jpg'
 import georgeWashington from '../resources/washington.webp'
@@ -13,29 +13,53 @@ import johnQAdams from '../resources/johnqadams.webp'
 import visionImage from '../resources/manycars.jpg'
 import visionImage2 from '../resources/maybe.jpg'
 import visionImage3 from '../resources/lightning.gif'
-
-
-const GridCard = ( {name,title,image} ) => {
+import officebuilding from '../resources/office_building.jpg'
+import officebuilding2 from '../resources/office_building2.webp'
+const StaffCard = ( {item} ) => {
 
   return (
     <div class = 'grid-card'>
       <img
-        src = {image}
+        src = {item.image}
         class = 'grid-card-img'
       />
       <div class = 'grid-card-info'>
-        <span class = 'grid-card-info-name'>{name}</span>
-        <span class = 'grid-card-info-title'> {title} </span>
+        <span class = 'grid-card-info-name'>{item.name}</span>
+        <span class = 'grid-card-info-title'> {item.title} </span>
       </div>
   </div>
   )
-
+}
+const OfficeCard = ({item}) =>{
+  return (
+    <div class = 'grid-office-card'>
+      <div class = 'grid-office-info-card'>
+        <h2> {item.place}</h2>
+        <span> {item.address}</span>
+      </div>
+      <img 
+        src = {item.image}
+        class = 'grid-office-img-card'
+      />
+    </div>
+  )
 }
 const About = ( {} ) => {
-
+  let staff_arr = [{name: 'George Washington', title: 'Chief Executive Officer', image: georgeWashington},
+    {name:'John Adams',title:'Chief Technology Officer',image: johnAdams},
+    {name:'Thomas Jefferson', title: 'Chief Marketing Officer', image:thomasJefferson},
+    {name: 'James Madison', title: 'Chief Human Resources Officer', image: jamesMadison},
+    {name: 'James Monroe', title: 'Chief Security Officer', image:jamesMonroe},
+    {name: 'John Quincy Adams', title: 'Chief Financial Officer', image:johnQAdams}]
+  let office_arr = [{place: 'Walnut', address: '18573 Rowland Dr.', image: officebuilding},
+    {place: 'Shanghai', address: '1930 Shanghai Dr.', image: officebuilding2}
+  ] 
+  const [staff, setStaff] = useState(staff_arr)
+  const [offices,setOffices] = useState(office_arr)
+  const scrollContainerRef = useRef(null)
   return (
-    <div class = 'about-container'>
-        <Header/>
+    <div class = 'about-container' ref={scrollContainerRef}>
+        <Header scrollContainerRef = {scrollContainerRef}/>
         <div class = 'about-header-card'>
           <span class = "about-overlay">
               About Isdera
@@ -99,14 +123,20 @@ const About = ( {} ) => {
           <div class = 'about-card'>
             <h2>Our Staff</h2>
             <div class = 'about-grid-container'>
-              <GridCard name = 'George Washington' title = 'Chief Executive Officer' image = {georgeWashington} />
-              <GridCard name = 'John Adams' title = 'Chief Technology Officer' image = {johnAdams} />
-              <GridCard name = 'Thomas Jefferson' title = 'Chief Marketing Officer' image = {thomasJefferson} />
-              <GridCard name = 'James Madison' title = 'Chief Human Resources Officer' image = {jamesMadison} />
-              <GridCard name = 'James Monroe' title = 'Chief Security Officer' image = {jamesMonroe} />
-              <GridCard name = 'John Quincy Adams' title = 'Chief Financial Officer' image = {johnQAdams} />
+{              staff.map((item) => (
+                  <StaffCard item = {item}/>
+              ))}
             </div>
           </div>
+          <div class = 'about-card'>
+            <h2>Our Offices</h2>
+            <div class = 'about-grid-container'>
+              {offices.map((item) => (
+                <OfficeCard item = {item}/>
+              ))}
+            </div>
+          </div>
+
         </div>
        
         <Footer/>

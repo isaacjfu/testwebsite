@@ -1,6 +1,6 @@
 import '../App.css';
 import Header from '../components/header.js'
-import {useState,useEffect} from 'react';
+import {useState,useEffect,useRef} from 'react';
 import imperator from '../resources/imperator.png'
 import commendatore from '../resources/commendatore.png'
 import silverArrow from '../resources/silverArrow.png'
@@ -31,12 +31,11 @@ const TestDriveCard = ( {car_name, car_image, selectedCar, setSelectedCar} ) => 
 }
 const TestDrive = ( {} ) => {
   const [selectedCar, setSelectedCar] = useState("")
-
-
+  const scrollContainerRef = useRef(null)
 
   return (
-    <div class = 'homepage-container'>
-        <Header />
+    <div class = 'homepage-container' ref = {scrollContainerRef}>
+        <Header scrollContainerRef = {scrollContainerRef}/>
         <div class = 'homepage-card'>
           <div class = 'homepage-text-header-card'>
             <h1> Request a Test Drive </h1>

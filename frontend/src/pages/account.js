@@ -1,11 +1,12 @@
 import '../App.css';
 import Header from '../components/header.js'
-import {useState,useEffect} from 'react';
+import {useState,useEffect, useRef} from 'react';
 import Footer from '../components/footer.js'
 const Account = ( {} ) => {
+  const scrollContainerRef = useRef(null)
   return (
-    <div class = 'homepage-container'>
-        <Header />
+    <div class = 'homepage-container' ref = {scrollContainerRef}>
+        <Header scrollContainerRef={scrollContainerRef} />
         <div class = 'header-filler'>
 
         </div>

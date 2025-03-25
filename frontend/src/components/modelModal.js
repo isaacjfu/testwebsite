@@ -41,14 +41,13 @@ const ModelModal = ({setClose, white, setWhite}) => {
   }, []);
 
   return (
-    <div class = "modal open">
+    <div class = "modal">
         <span onClick ={handleClick} class = 'modal-close'> X </span>
         <div class = 'modal-car-container'>
             <div class = 'modal-card'>
                 <img
                 src = {commendatore}
                 class = 'modal-card-image'
-                onClick = {handleCClick}
                 />
                 <span class = 'modal-card-info' onClick = {handleCClick}> Commendatore </span>
             </div>
@@ -56,7 +55,6 @@ const ModelModal = ({setClose, white, setWhite}) => {
                 <img
                 src = {imperator}
                 class = 'modal-card-image'
-                onClick = {handleIClick}
                 />
                 <span class = 'modal-card-info' onClick = {handleIClick}> Imperator </span>
             </div>
@@ -64,7 +62,6 @@ const ModelModal = ({setClose, white, setWhite}) => {
                 <img
                 src = {silverArrow}
                 class = 'modal-card-image'
-                onClick = {handleSClick}
                 />   
                 <span class = 'modal-card-info' onClick = {handleSClick}> Silver Arrow </span>          
             </div>

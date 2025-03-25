@@ -1,14 +1,44 @@
 import '../App.css';
 import Header from './header.js'
 import Footer from './footer.js'
-import {useState,useEffect} from 'react';
+import {useState,useEffect, useRef} from 'react';
 import first_card from '../resources/bluedoorsclosed.jpg'
+import second_card from '../resources/second_card.jpg'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import AccordionMenu from './accordionMenu.js'
 // import first_card from '../resources/1993isdera.jpg'
+
+
+const ImageCarousel = () => {
+    const cards = [{image: first_card, text: 'Commendatore'},{image: second_card, text: 'Spyder'}]
+    const [index, setIndex] = useState(0);
+    const prevImage = () => {
+        setIndex((prevIndex) =>(prevIndex - 1 + cards.length) % cards.length);
+    }
+    const nextImage = () => {
+        setIndex((prevIndex) => (prevIndex +1) % cards.length)
+    }
+    return (
+        <div class = 'carousel'>
+            <img
+                src = {cards[index]['image']}
+                alt = "Stock Image"
+                class = 'homepage-img'
+            />
+            <div class = 'carousel-overlay-button'>
+                <button onClick = {prevImage} class = 'carousel-button'> ←  </button>
+                <button onClick = {nextImage} class = 'carousel-button'> → </button>
+            </div>
+            <div class = 'carousel-overlay-text'>
+                <span> {cards[index]['text']} </span>
+            </div>
+        </div>
+
+    )
+}
 const Home = ( {currentView} ) => {
     let navigate = useNavigate()
-
+    const scrollContainerRef = useRef(null)
     const handleCClick = () => {
         navigate('/commendatore')
     }
@@ -16,14 +46,10 @@ const Home = ( {currentView} ) => {
         navigate('/imperator')
     }
     return (
-        <div class = 'homepage-container'>
-          <Header/>
+        <div class = 'homepage-container' ref = {scrollContainerRef}>
+          <Header scrollContainerRef= {scrollContainerRef}/>
           <div class = 'first-card'>
-              <img
-                  src = {first_card}
-                  alt = "Stock Image"
-                  class = 'homepage-img'
-              />
+             <ImageCarousel/>
           </div>
           <div class = 'homepage-text-card'>
               <h1> Isdera Motors </h1>

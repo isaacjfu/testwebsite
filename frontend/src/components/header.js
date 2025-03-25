@@ -3,9 +3,25 @@ import logo from '../resources/isdera_textlogo.png'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import {useState,useEffect} from 'react';
 import ModelModal from './modelModal.js'
-const Header = ( {white, setWhite} ) => {
+const Header = ( {white, setWhite,scrollContainerRef} ) => {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
+  useEffect(()=> {
+    console.log('in use')
+    if (showModal && scrollContainerRef?.current){
+      const handleScroll = () => {
+        setShowModal(!showModal)
+      }
+      console.log("added event listener")
+      scrollContainerRef.current.addEventListener("scroll",handleScroll)
+
+      return () => {
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.removeEventListener("scroll", handleScroll)
+        }
+      }
+    }
+  }, [showModal])
 
   const modelOnClick = () => {
     setShowModal(true)
@@ -31,7 +47,7 @@ const Header = ( {white, setWhite} ) => {
     <div class = {`header-container ${showModal ? 'header-bg-modal-open' : ''}`}>
       <div class = 'header-left'>          
         <img
-            class = {`header-logo ${white ? 'white_img' : ''}`}
+            class = 'header-logo'
             src={logo}
             alt="Initial Image"
             onClick ={logoOnClick}
