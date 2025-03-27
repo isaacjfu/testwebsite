@@ -2,7 +2,7 @@
 html, body{
   max-width: 100%;
   overflow-x: hidden;
-  font-family: 12px / 22px Clarkson, Proxima Nova, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 14px / 18px Clarkson, Proxima Nova, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   flex-wrap:wrap;
   background-color: #e5e3dc;
@@ -12,13 +12,25 @@ img {
   max-width: 100%;
   height:auto;
 }
+
 p {
   max-width: 80ch;
   line-height:1.8;
-  font-size: 20px;
+  font-size: 24px;
   text-align:left;
 }
-
+span {
+  font-size:16px;
+}
+.large-font{
+  font-size:32px;
+}
+.medium-font{
+  font-size:24px;
+}
+.small-font{
+  font-size:16px;
+}
 .white_text{
   color: white;
 }

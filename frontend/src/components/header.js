@@ -54,10 +54,10 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
         />
       </div>
       <div class = 'header-right'>
-        <span class = {`span-button underline-animation ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
-        <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> About Isdera </span>
-        <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {testOnClick}> Request Test Drive </span>
-        <span class = {`span-button ${white ? 'white_text' : ''}`} onClick= {accountOnClick}> Account </span>
+        <span class = {`span-button small-font underline-animation ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> Models </span>
+        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> About Isdera </span>
+        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {testOnClick}> Request Test Drive </span>
+        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {accountOnClick}> Account </span>
       </div>
       {showModal ?
             (<ModelModal setClose = {setShowModal} white = {white} setWhite = {setWhite}/>)

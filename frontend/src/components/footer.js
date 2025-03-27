@@ -69,7 +69,7 @@ const FooterBottomMenu = ({menu}) => {
         <h2 class = 'span-button'> {menu.header}</h2>
         <div class = 'footer-bottom-menu-container'> 
           {menu.content.map((c,index) => (
-            <span class ='span-button'>{c}</span>
+            <span class ='small-font span-button'>{c}</span>
           ))}
         </div>
 
