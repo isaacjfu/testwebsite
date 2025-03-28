@@ -61,9 +61,9 @@ const About = ( {} ) => {
     <div class = 'about-container' ref={scrollContainerRef}>
         <Header scrollContainerRef = {scrollContainerRef}/>
         <div class = 'about-header-card'>
-          <span class = "about-overlay">
+          <h1 class = "about-overlay">
               About Isdera
-          </span>
+          </h1>
           <img
             src = {top_image}
             class = 'about-img-card'
@@ -72,7 +72,7 @@ const About = ( {} ) => {
         <div class = 'about-subcontainer'>
           <div class = 'about-card'>
             <div class = 'homepage-text-card'>
-              <h1> Our Vision </h1>
+              <h2> Our Vision </h2>
               <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                   exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure

@@ -19,10 +19,10 @@ const Accordion = () => {
       {sections.map((section, index) => (
         <div class="accordion-item" onClick={() => toggleAccordion(index)} key={index}>
           <span class="accordion-header">
-            <h4 class="accordion-title">{section.title}</h4>
-            <h4 class="accordion-icon">
+            <h2 class="accordion-title">{section.title}</h2>
+            <h2 class="accordion-icon">
               {activeIndex === index ? "_" : "+"}
-            </h4>
+            </h2>
           </span>
           <div
             class={`accordion-content ${

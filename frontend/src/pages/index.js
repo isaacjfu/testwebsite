@@ -18,7 +18,7 @@ const Index = ( {} ) => {
 
   return (
     <div class = 'home'>
-      {/* <Intro currentView = {currentView} /> */}
+      {/* <Intro /> */}
       <Home currentView = {currentView} />
     </div>
   );

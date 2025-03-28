@@ -1,12 +1,25 @@
+:root{
+  --header:#b8ac84;
+  --primary: #9ba072;
+  --secondary: #277b5c;
+  --tertiary: #fdf0ca;
+  --text-color-light: white;
+  --text-color-dark: black;
+}
 
+/* #e5e3dc */
 html, body{
   max-width: 100%;
   overflow-x: hidden;
   font-family: 14px / 18px Clarkson, Proxima Nova, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   flex-wrap:wrap;
-  background-color: #e5e3dc;
-  color: #495a58;
+  background-color: var(--primary);
+  color: var(--text-color-dark);
+}
+.offset{
+  background-color: var(--secondary);
+  color: var(--text-color-light)
 }
 img {
   max-width: 100%;
@@ -22,15 +35,13 @@ p {
 span {
   font-size:16px;
 }
-.large-font{
+h1 {
+  font-size:40px
+}
+h2{
   font-size:32px;
 }
-.medium-font{
-  font-size:24px;
-}
-.small-font{
-  font-size:16px;
-}
+
 .white_text{
   color: white;
 }
@@ -72,12 +83,18 @@ span {
   animation: fadeInOut 1s ease-in forwards;
 }
 .header-container{
+  position: absolute;
+  color:black;
+  background-color: var(--header);
   display: flex;
+  top:0;
+  width:100%;
   height: 10%;
   align-content:center;
   justify-content: space-between;
   font-weight: 500;
-  font-size: 16px;
+  letter-spacing: 1.5px;
+  z-index:5;
   transition: transform 0.3s ease-in-out; /* Smooth slide-up effect */
 }
 .header-left{
@@ -94,17 +111,19 @@ span {
 }
 .modal{
   position: absolute;
-  top: 9%;
-  width: 94.2%;
-  height:15%;
-  opacity:0;
-  padding-left:5%;
-  background-color: #e5e3dc;
+  top: 100%;
+  width: 100%;
+  height:140%;
+  background-color: var(--secondary);
   display:flex;
-  z-index:5;
-  animation: modalFadeIn 0.5s ease-out forwards;
+  z-index:3;
 }
-
+.modal.fade-in{
+  animation: modalFadeIn 0.5s ease-in-out forwards;
+}
+.modal.fade-out{
+  animation: modalFadeOut 0.5s ease-in-out forwards;
+}
 .modal-car-container{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -142,7 +161,7 @@ span {
 }
 .header-logo{
   height:auto;
-  width:5em;
+  width:8em;
   cursor: pointer;
 }
 .span-button{
@@ -167,15 +186,17 @@ span {
 }
 
 .homepage-container{
-  scroll-snap-type: y-mandatory;
-  overflow-y: auto;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
   width:100%;
   height:100vh;
 }
-.first-card{
+.first-container{
   position:relative;
+  scroll-snap-align: start;
   width:100%;
-  height:90%;
+  height:100%;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -184,7 +205,6 @@ span {
 .overlay-card{
   position: absolute;
   font-weight: 600;
-  font-size: 40px;
   width: 400px;
   height: 75px;
   gap: 10px;
@@ -223,10 +243,38 @@ span {
   padding-top:0px;
   margin-top:0px;
 }
-.homepage-img{
+.hero-container{
+  align-self:flex-start;
+  z-index:2;
+  width: 100%;
+  height:80%;
+  margin:5%;
+}
+.background-img-container{
+  position: absolute;
+  z-index:1;
+}
+.background-img-container::before{
   width:100%;
   height:100%;
-  object-fit: fill;
+  content:'';
+  position:absolute;
+  background:linear-gradient(to bottom, var(--header) 15%, transparent 30%);
+  z-index:2;
+  pointer-events: none;
+}
+.background-img-container img{
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  position: relative;
+  filter:blur(15px);
+}
+.hero-img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
 }
 .carousel-overlay-button{
   position:absolute;
@@ -258,7 +306,19 @@ span {
   position:absolute;
   z-index:2
 }
-.homepage-text-card{
+.loose-container{
+  position:relative;
+}
+.fixed-container{
+  scroll-snap-align: start;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  padding:20px;
+}
+.centered-text-card{
   position: relative;
   margin:40px;
   display: flex;
@@ -370,8 +430,6 @@ span {
 }
 .about-overlay{
   position: absolute;
-  font-weight: 600;
-  font-size: 40px;
   width: 400px;
   height: 50%;
   gap: 10px;
@@ -489,7 +547,6 @@ span {
   border: none;
   border-bottom: 1px solid grey;
   outline: none;
-  font-size: 16px;
   padding: 10px 10px;
   margin:20px 0px;
   background: none;
@@ -503,7 +560,6 @@ span {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 16px;
   color: black;
   pointer-events: none;
   transition: 0.3s ease;
@@ -512,7 +568,6 @@ span {
   width: 20%;
   padding: 10px;
   margin-top: 40px;
-  font-size: 16px;
   float:right;
   background-color: white;
   color: black;
@@ -535,14 +590,14 @@ input[type='radio']{
 .accordion {
   width: 65%;
   margin: 0 auto;
-  border-top: 2px solid #ccc;
+  border-top: 2px solid black;
   overflow: hidden;
 }
 
 .accordion-item {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid black;
   cursor: pointer;
 }
 
@@ -563,13 +618,11 @@ input[type='radio']{
 
 .accordion-icon {
   flex: 0;
-  font-size: 18px;
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  font-size: 14px;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 .accordion-content > p {
@@ -584,7 +637,6 @@ input[type='radio']{
   position: relative;
   width: 100%;
   text-align: center; 
-  font-size: 14px; 
   display:flex;
   flex-direction: column;
   z-index:1;
@@ -663,6 +715,14 @@ input[type='radio']{
   }
   100% {
     opacity:1;
+  }
+}
+@keyframes modalFadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
   }
 }
 

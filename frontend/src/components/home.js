@@ -2,15 +2,14 @@ import '../App.css';
 import Header from './header.js'
 import Footer from './footer.js'
 import {useState,useEffect, useRef} from 'react';
-import first_card from '../resources/bluedoorsclosed.jpg'
+import hero_image from '../resources/test4.5.jpg'
 import second_card from '../resources/second_card.jpg'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import AccordionMenu from './accordionMenu.js'
 // import first_card from '../resources/1993isdera.jpg'
 
 
-const ImageCarousel = () => {
-    const cards = [{image: first_card, text: 'Commendatore'},{image: second_card, text: 'Spyder'}]
+const ImageCarousel = (cards) => {
     const [index, setIndex] = useState(0);
     const prevImage = () => {
         setIndex((prevIndex) =>(prevIndex - 1 + cards.length) % cards.length);
@@ -47,25 +46,46 @@ const Home = ( {currentView} ) => {
     }
     return (
         <div class = 'homepage-container' ref = {scrollContainerRef}>
-          <Header scrollContainerRef= {scrollContainerRef}/>
-          <div class = 'first-card'>
-             <ImageCarousel/>
-          </div>
-          <div class = 'homepage-text-card'>
-              <h1> Isdera Motors </h1>
-              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              </p>
-              <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.</p>
-          </div>
-          <div class = 'homepage-text-card'>
-            <h2> News  </h2>
-            <AccordionMenu/>
-          </div>
-          <Footer/>
+            <div class = 'first-container'>
+                <Header scrollContainerRef= {scrollContainerRef}/>
+                <div class = 'background-img-container'>
+                    <img
+                        src = {hero_image}
+                        alt = 'Background Image'
+                    />
+                </div>
+
+                <div class = 'hero-container'>
+                    <img
+                        src = {hero_image}
+                        alt = "Stock Image"
+                        class = 'hero-img'
+                    />
+                </div>
+            </div>
+            <div class = 'fixed-container' >
+                <div class = 'centered-text-card'>
+                    <h1> Isdera Motors </h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+                </div>
+            </div>
+            <div class = 'fixed-container offset'>
+                <div>
+                    <h1> asdasdsad</h1>
+                    <p> asdasdasdsadasdadsads aasd asd asdas </p>
+                </div>
+            </div>
+            <div class = 'centered-text-card'>
+                <h1> News  </h1>
+                <AccordionMenu/>
+            </div>
+            <Footer/>
         </div>
   )
 
