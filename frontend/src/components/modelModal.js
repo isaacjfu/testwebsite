@@ -9,9 +9,9 @@ const ModelModal = ({setClose, white, setWhite}) => {
   const navigate = useNavigate()
   const [hasWhite, setHasWhite] = useState(false)
   const handleClick = () => {
-    setClose(false)
-    if(hasWhite == true){
-      setWhite(!white)
+    const modal = document.querySelector('.modal')
+    if(modal) {
+      modal.classList.add('fade-out')
     }
   }
   const handleKeyDown = (event) => {
@@ -20,6 +20,11 @@ const ModelModal = ({setClose, white, setWhite}) => {
     }
   };
 
+  const handleAnimationEnd = (e) => {
+    if (e.animationName === 'modalFadeOut') {
+      setClose(false)
+    }
+  }
   const handleCClick = () => {
     navigate('/commendatore')
   }
@@ -41,7 +46,7 @@ const ModelModal = ({setClose, white, setWhite}) => {
   }, []);
 
   return (
-    <div class = "modal">
+    <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
         <span onClick ={handleClick} class = 'modal-close'> X </span>
         <div class = 'modal-car-container'>
             <div class = 'modal-card'>

@@ -46,8 +46,8 @@ const Home = ( {currentView} ) => {
     }
     return (
         <div class = 'homepage-container' ref = {scrollContainerRef}>
+            <Header scrollContainerRef= {scrollContainerRef}/>
             <div class = 'first-container'>
-                <Header scrollContainerRef= {scrollContainerRef}/>
                 <div class = 'background-img-container'>
                     <img
                         src = {hero_image}
