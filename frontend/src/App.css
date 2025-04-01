@@ -357,9 +357,6 @@ h2{
   position:absolute;
   z-index:2
 }
-.loose-container{
-  position:relative;
-}
 .fixed-container{
   scroll-snap-align: start;
   position:relative;
@@ -369,6 +366,13 @@ h2{
   align-items: center;
   height:100vh;
   padding:20px;
+}
+.loose-container{
+  scroll-snap-align: start;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 .centered-text-card{
   position: relative;
@@ -382,8 +386,25 @@ h2{
   padding-right: 100px;
   padding-top: 20px;
   padding-bottom: 20px;
+  width:100%;
 }
-
+.side-by-side-container{
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+}
+.side-by-side-image{
+  padding: 40px;
+}
+.side-by-side-text{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 33%;
+}
 .homepage-img-card{
   width:40%;
   height:20%;
@@ -422,8 +443,8 @@ h2{
   transition: background-color 0.3s, border-color 0.3s;
 }
 .testdrive-card.highlighted{
-  background-color: lightblue;
-  border-color:blue;
+  background-color: var(--tertiary);
+  border-color:yellow;
 }
 .testdrive-card-image{
   width:100%;
@@ -605,7 +626,7 @@ h2{
 }
 
 .request-form-group >input:focus {
-  border-bottom: 2px solid rgb(90, 147, 221);
+  border-bottom: 2px solid var(--tertiary);
 }
 
 .request-form-group > label {
@@ -629,14 +650,14 @@ h2{
   transition: 0.3s ease;
 }
 .request-form > button:hover {
-  background-color: lightblue;
+  background-color: var(--tertiary);
 }
 .request-form-radio-group-card-label{
   margin:5px 10px;
 }
 input[type='radio']{
   margin-right:5px;
-  accent-color:rgb(79, 128, 189);
+  accent-color: var(--tertiary);
 }
 
 .accordion {
