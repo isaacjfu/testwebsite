@@ -2,7 +2,7 @@ import '../App.css';
 import Header from '../components/header.js'
 import {useState,useEffect, useRef} from 'react';
 import Footer from '../components/footer.js'
-const Account = ( {} ) => {
+const Contact = ( {} ) => {
   const scrollContainerRef = useRef(null)
   return (
     <div class = 'homepage-container' ref = {scrollContainerRef}>
@@ -33,4 +33,4 @@ const Account = ( {} ) => {
 
 }
 
-export default Account
+export default Contact

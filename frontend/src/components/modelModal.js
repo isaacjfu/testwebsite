@@ -4,10 +4,26 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import imperator from '../resources/imperator.png'
 import commendatore from '../resources/commendatore.png'
 import silverArrow from '../resources/silverArrow.png'
-
-const ModelModal = ({setClose, white, setWhite}) => {
+const ModelModal = ({setClose, clickedModal}) => {
   const navigate = useNavigate()
-  const [hasWhite, setHasWhite] = useState(false)
+  const [showRight, setShowRight] = useState(false)
+  const [imageShown, setImageShown] = useState(null)
+  const modelItems = [{
+    name: 'Commendatore',
+    img: commendatore
+  }, {
+    name: 'Imperator',
+    img: imperator
+  }, {
+    name: 'Silver Arrow',
+    img: silverArrow
+  }]
+  const aboutItems = [{
+    name: 'Our Company'
+  }, {
+    name: 'Contact Us'
+  }
+  ]
   const handleClick = () => {
     const modal = document.querySelector('.modal')
     if(modal) {
@@ -25,20 +41,42 @@ const ModelModal = ({setClose, white, setWhite}) => {
       setClose(false)
     }
   }
-  const handleCClick = () => {
-    navigate('/commendatore')
+  const mouseHover = (image) => {
+    setImageShown(image)
+    setShowRight(true)
   }
-  const handleIClick = () => {
-    navigate('/imperator')
+  const mouseUnhover = () => {
+    setImageShown(null)
+    setShowRight(false)
   }
-  const handleSClick = () => {
-    navigate('/silverArrow')
+  const handleModelClick = (model) => {
+    switch (model) {
+      case 'Commendatore':
+        navigate('/commendatore')
+        break;
+      case 'Imperator':
+        navigate('/imperator')
+        break;
+      case 'Silver Arrow':
+        navigate('/silverArrow')
+        break;
+      default:
+        return
+    }
+  }
+  const handleAboutClick = (about) => {
+    switch (about) {
+      case 'Our Company':
+        navigate('/about')
+        break;
+      case 'Contact Us':
+        navigate('/contact')
+        break;
+      default:
+        return
+    }
   }
   useEffect(() => {
-    if (white == true){
-      setWhite(false)
-      setHasWhite(true)
-    }
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
@@ -48,29 +86,39 @@ const ModelModal = ({setClose, white, setWhite}) => {
   return (
     <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
         <span onClick ={handleClick} class = 'modal-close'> X </span>
-        <div class = 'modal-car-container'>
-            <div class = 'modal-card'>
-                <img
-                src = {commendatore}
-                class = 'modal-card-image'
-                />
-                <span class = 'modal-card-info' onClick = {handleCClick}> Commendatore </span>
-            </div>
-            <div class = 'modal-card'>
-                <img
-                src = {imperator}
-                class = 'modal-card-image'
-                />
-                <span class = 'modal-card-info' onClick = {handleIClick}> Imperator </span>
-            </div>
-            <div class = 'modal-card'>
-                <img
-                src = {silverArrow}
-                class = 'modal-card-image'
-                />   
-                <span class = 'modal-card-info' onClick = {handleSClick}> Silver Arrow </span>          
-            </div>
-        </div>
+        {(() => {
+          switch (clickedModal) {
+            case 'model':
+              return <div class = 'modal-side-by-side-container'>
+                      <div class = 'modal-text-dropdown'>
+                        {modelItems.map((item,index) => (
+                          <span key = {index} class = 'span-button small-font' onClick = { () => handleModelClick(item['name'])}
+                          onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
+                        ))}
+                      </div>
+                        <div class = 'modal-car-dropdown'>
+                        {showRight ? 
+                        <img
+                          src = {imageShown}
+                          class = 'modal-model-image'
+                        /> 
+                        : <></>}
+                        </div>
+                      </div>;
+            case 'about':
+              return <div class = 'modal-side-by-side-container'>
+                    <div class = 'modal-text-dropdown'>
+                      {aboutItems.map((item) => (
+                        <span class = 'span-button small-font' onClick = { () => handleAboutClick(item['name'])}> {item['name']}</span>
+                      ))}
+                    </div>
+                      <div class = 'modal-car-dropdown'>
+                      </div>
+                    </div>;
+            default:
+              return null;
+          }
+        })()}
     </div>
   );
 

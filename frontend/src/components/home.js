@@ -39,7 +39,7 @@ const Home = ( {currentView} ) => {
             </div>
             <div class = 'fixed-container' >
                 <div class = 'centered-text-card'>
-                    <h1> Isdera Motors </h1>
+                    <h2> Isdera Motors </h2>
                     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -71,6 +71,7 @@ const Home = ( {currentView} ) => {
                         <button
                             class = 'block-button'
                             onClick = {handleRequestClick}
+                            style = {{width: '30%'}}
                         >
                             Request
                         </button>
@@ -79,7 +80,7 @@ const Home = ( {currentView} ) => {
             </div>
             <div class = 'loose-container offset'>
                 <div class = 'centered-text-card'>
-                    <h1> News  </h1>
+                    <h2> News  </h2>
                     <AccordionMenu/>
                 </div>
             </div>

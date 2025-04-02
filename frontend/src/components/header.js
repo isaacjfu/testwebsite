@@ -3,9 +3,12 @@ import logo from '../resources/isdera_textlogo.png'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import {useState,useEffect} from 'react';
 import ModelModal from './modelModal.js'
+
+
 const Header = ( {white, setWhite,scrollContainerRef} ) => {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
+  const [clickedModal, setClickedModal] = useState('')
   useEffect(()=> {
     console.log('in use')
     if (showModal && scrollContainerRef?.current){
@@ -24,11 +27,13 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
   }, [showModal])
 
   const modelOnClick = () => {
+    setClickedModal('model')
     setShowModal(true)
   }
 
   const aboutOnClick = () => {
-    navigate('/about')
+    setClickedModal('about')
+    setShowModal(true)
   }
 
   const logoOnClick = () => {
@@ -37,10 +42,6 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
 
   const testOnClick = () => {
     navigate('/testDrive')
-  }
-
-  const accountOnClick = () => {
-    navigate('/account')
   }
 
   return (
@@ -54,12 +55,12 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
         />
       </div>
       <div class = 'header-right'>
-        <span class = {`span-button small-font underline-animation ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> MODELS </span>
+        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> MODELS </span>
         <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> ABOUT ISDERA </span>
         <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {testOnClick}> REQUEST TEST DRIVE </span>
       </div>
       {showModal ?
-            (<ModelModal setClose = {setShowModal} white = {white} setWhite = {setWhite}/>)
+            (<ModelModal setClose = {setShowModal} clickedModal = {clickedModal}/>)
             :
             (<></>)
       }
