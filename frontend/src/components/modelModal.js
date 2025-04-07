@@ -1,9 +1,9 @@
 import '../App.css';
 import {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import imperator from '../resources/imperator.png'
-import commendatore from '../resources/commendatore.png'
-import silverArrow from '../resources/silverArrow.png'
+import imperator from '../resources/card3-modal.png'
+import commendatore from '../resources/card2-modal.png'
+import silverArrow from '../resources/card1-modal.png'
 const ModelModal = ({setClose, clickedModal}) => {
   const navigate = useNavigate()
   const [showRight, setShowRight] = useState(false)
@@ -96,15 +96,20 @@ const ModelModal = ({setClose, clickedModal}) => {
                           onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
                         ))}
                       </div>
-                        <div class = 'modal-car-dropdown'>
                         {showRight ? 
-                        <img
-                          src = {imageShown}
-                          class = 'modal-model-image'
-                        /> 
+                          <div class = 'modal-car-dropdown'> 
+                          <div class = 'modal-car-image-container'>
+                            <img
+                              src = {imageShown}
+                              class = 'modal-model-image'
+                            /> 
+                          </div>
+                          <div class = 'modal-car-descript-container'>
+                            <span> Hello </span>
+                          </div>
+                          </div>
                         : <></>}
-                        </div>
-                      </div>;
+                      </div>
             case 'about':
               return <div class = 'modal-side-by-side-container'>
                     <div class = 'modal-text-dropdown'>

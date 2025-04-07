@@ -54,10 +54,12 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
             onClick ={logoOnClick}
         />
       </div>
+      <div class = 'header-middle'> 
+        <span class = 'span-button' onClick= {modelOnClick}> MODELS </span>
+        <span class = 'span-button' onClick= {aboutOnClick}> ABOUT ISDERA </span>
+      </div>
       <div class = 'header-right'>
-        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {modelOnClick}> MODELS </span>
-        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {aboutOnClick}> ABOUT ISDERA </span>
-        <span class = {`span-button small-font ${white ? 'white_text' : ''}`} onClick= {testOnClick}> REQUEST TEST DRIVE </span>
+        <span class = 'header-button' onClick= {testOnClick}> REQUEST TEST DRIVE </span>
       </div>
       {showModal ?
             (<ModelModal setClose = {setShowModal} clickedModal = {clickedModal}/>)
