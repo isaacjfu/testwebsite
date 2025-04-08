@@ -48,7 +48,7 @@ const FooterTop = ( {handleLogoClick} ) => {
 }
 const FooterBottom = ( {}) => {
   const menus =[
-    {header: 'Models', content: ['Commendatore', 'Imperator', 'Silver Arrow', 'Erator', 'Spyder', 'Autobahnkurier']},
+    {header: 'Models', content: ['Commendatore', 'Imperator', 'Spyder', 'Erator', 'Autobahnkurier']},
     {header: 'Loren', content: ['Duis', 'Consectetur', 'Labore', 'Excepteur']},
     {header: 'About Us', content: ['News', 'Investors', 'Our Vision', 'Our Story', 'Technology']},
     {header: 'Corporate', content: ['Contact Us', 'Careers', 'Offices']},

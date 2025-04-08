@@ -3,7 +3,7 @@ import Header from '../components/header.js'
 import {useState,useEffect} from 'react';
 import first_card from '../resources/silver_arrow.jpg'
 import Footer from '../components/footer.js'
-const SilverArrow = ( {} ) => {
+const Spyder = ( {} ) => {
 
   return (
     <div class = 'homepage-container'>
@@ -22,4 +22,4 @@ const SilverArrow = ( {} ) => {
 
 }
 
-export default SilverArrow
+export default Spyder

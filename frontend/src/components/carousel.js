@@ -13,7 +13,7 @@ const Carousel = ({}) => {
         {image: card_2, name: 'Imperator', navigate: '/imperator',
             text:`Ut enim ad minim veniam, quis nostrud 
             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat`},
-        {image: card_3, name: 'Silver Arrow', navigate: '/silverArrow',
+        {image: card_3, name: 'Spyder', navigate: '/spyder',
             text:`Duis aute irure dolor in reprehenderit in voluptate velit esse
              cillum dolore eu fugiat nulla pariatur.`}
     ]

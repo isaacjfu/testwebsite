@@ -3,7 +3,7 @@ import Header from '../components/header.js'
 import {useState,useEffect,useRef} from 'react';
 import imperator from '../resources/imperator.png'
 import commendatore from '../resources/commendatore.png'
-import silverArrow from '../resources/silverArrow.png'
+import spyder from '../resources/spyder.png'
 import Footer from '../components/footer.js'
 import TestDriveRequest from '../components/testdriveRequest.js';
 const TestDriveCard = ( {car_name, car_image, selectedCar, setSelectedCar} ) => {
@@ -47,7 +47,7 @@ const TestDrive = ( {} ) => {
             <div class ='testdrive-car-container'>
               <TestDriveCard car_name = 'Commendatore' car_image={commendatore} selectedCar = {selectedCar} setSelectedCar={setSelectedCar} />
               <TestDriveCard car_name = 'Imperator' car_image={imperator} selectedCar = {selectedCar} setSelectedCar={setSelectedCar}/>
-              <TestDriveCard car_name = 'Silver Arrow' car_image={silverArrow} selectedCar = {selectedCar} setSelectedCar={setSelectedCar}/>
+              <TestDriveCard car_name = 'Spyder' car_image={spyder} selectedCar = {selectedCar} setSelectedCar={setSelectedCar}/>
             </div> 
             {(selectedCar != '') ?
             (<TestDriveRequest/>) : (<></>)

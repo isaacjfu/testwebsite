@@ -172,6 +172,7 @@ h3 {
   background-color: var(--header);
   color: black;
   padding: 20px 30px;
+  border: 1px solid var(--header);
   width: 60%; 
   height: 40vh;
   z-index: 1000;
@@ -202,9 +203,12 @@ h3 {
   width:70%;
   height:auto;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .modal-model-image{
-  padding: 0px 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top : 30px;
   object-fit: fill;
 }
 .modal-close{
@@ -644,7 +648,7 @@ h3 {
   margin: 20px auto;
 }
 
-.request-form > h1 {
+.request-form > h2 {
   font-weight: 500;
   margin: 20px auto;
 }
@@ -672,7 +676,7 @@ h3 {
   align-items: center;
   text-align: center;
 }
-.request-form-group > input {
+.lined-input{
   width: 100%;
   border: none;
   border-bottom: 1px solid grey;
@@ -682,6 +686,16 @@ h3 {
   background: none;
 }
 
+.boxed-input {
+  width:100%;
+  border: 2px solid grey;
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box; 
+  background-color: transparent;
+}
 .request-form-group >input:focus {
   border-bottom: 2px solid var(--tertiary);
 }
@@ -832,8 +846,11 @@ input[type='radio']{
 }
 
 .header-filler{
+  display:flex;
   position: static;
   height:20vh;
+  align-items: center;
+  justify-content: center;
 }
 .request-form > h2{
   text-align: center;

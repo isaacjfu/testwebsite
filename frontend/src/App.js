@@ -4,9 +4,10 @@ import Index from './pages/index.js';
 import About from './pages/about.js';
 import Contact from './pages/contact.js';
 import TestDrive from './pages/TestDrive.js'
-import SilverArrow from './pages/silverArrow.js'
+import Spyder from './pages/spyder.js'
 import Commendatore from './pages/commendatore.js';
 import Imperator from './pages/imperator.js';
+import History from './pages/history.js'
 function App() {
   return (
     <Router>
@@ -15,10 +16,11 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/silverArrow" element={<SilverArrow/>} />
+          <Route path="/spyder" element={<Spyder/>} />
           <Route path="/commendatore" element={<Commendatore/>} />
           <Route path="/imperator" element={<Imperator/>} />
           <Route path="/testDrive" element={<TestDrive/>} />
+          <Route path="/history" element={<History/>}/>
         </Routes>
       </div>
     </Router>

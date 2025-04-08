@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 // Models
 import imperator from '../resources/card3.jpg'
 import commendatore from '../resources/card2.jpg'
-import silverArrow from '../resources/card1.jpg'
+import spyder from '../resources/card1.jpg'
 // About
 import about1 from '../resources/about1.jpg'
 import about2 from '../resources/about2.jpg'
+import about3 from '../resources/about3.jpg'
 const ModelModal = ({setClose, clickedModal}) => {
   const navigate = useNavigate()
   const [showRight, setShowRight] = useState(false)
@@ -19,15 +20,18 @@ const ModelModal = ({setClose, clickedModal}) => {
     name: 'Imperator',
     img: imperator
   }, {
-    name: 'Silver Arrow',
-    img: silverArrow
+    name: 'Spyder',
+    img: spyder
   }]
   const aboutItems = [{
     name: 'Our Company',
     img: about1
+  },{
+    name: 'Our History',
+    img: about2
   }, {
     name: 'Contact Us',
-    img: about2
+    img: about3
   }
   ]
   const handleClick = () => {
@@ -63,20 +67,17 @@ const ModelModal = ({setClose, clickedModal}) => {
       case 'Imperator':
         navigate('/imperator')
         break;
-      case 'Silver Arrow':
-        navigate('/silverArrow')
+      case 'Spyder':
+        navigate('/spyder')
         break;
-      default:
-        return
-    }
-  }
-  const handleAboutClick = (about) => {
-    switch (about) {
       case 'Our Company':
         navigate('/about')
         break;
       case 'Contact Us':
         navigate('/contact')
+        break;
+      case 'Our History':
+        navigate('/history')
         break;
       default:
         return
