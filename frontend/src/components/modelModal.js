@@ -1,9 +1,13 @@
 import '../App.css';
 import {useState, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import imperator from '../resources/card3-modal.png'
-import commendatore from '../resources/card2-modal.png'
-import silverArrow from '../resources/card1-modal.png'
+// Models
+import imperator from '../resources/card3.jpg'
+import commendatore from '../resources/card2.jpg'
+import silverArrow from '../resources/card1.jpg'
+// About
+import about1 from '../resources/about1.jpg'
+import about2 from '../resources/about2.jpg'
 const ModelModal = ({setClose, clickedModal}) => {
   const navigate = useNavigate()
   const [showRight, setShowRight] = useState(false)
@@ -19,9 +23,11 @@ const ModelModal = ({setClose, clickedModal}) => {
     img: silverArrow
   }]
   const aboutItems = [{
-    name: 'Our Company'
+    name: 'Our Company',
+    img: about1
   }, {
-    name: 'Contact Us'
+    name: 'Contact Us',
+    img: about2
   }
   ]
   const handleClick = () => {
@@ -89,37 +95,39 @@ const ModelModal = ({setClose, clickedModal}) => {
         {(() => {
           switch (clickedModal) {
             case 'model':
-              return <div class = 'modal-side-by-side-container'>
-                      <div class = 'modal-text-dropdown'>
-                        {modelItems.map((item,index) => (
-                          <span key = {index} class = 'span-button small-font' onClick = { () => handleModelClick(item['name'])}
-                          onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
-                        ))}
-                      </div>
+              return <div class = 'modal-model-container'>
+                        <div class = 'modal-model-text'>
+                          {modelItems.map((item,index) => (
+                            <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
+                            onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
+                          ))}
+                        </div>
                         {showRight ? 
-                          <div class = 'modal-car-dropdown'> 
-                          <div class = 'modal-car-image-container'>
+                          <div class = 'modal-model-image-container'>
                             <img
                               src = {imageShown}
                               class = 'modal-model-image'
                             /> 
                           </div>
-                          <div class = 'modal-car-descript-container'>
-                            <span> Hello </span>
-                          </div>
-                          </div>
                         : <></>}
                       </div>
             case 'about':
-              return <div class = 'modal-side-by-side-container'>
-                    <div class = 'modal-text-dropdown'>
-                      {aboutItems.map((item) => (
-                        <span class = 'span-button small-font' onClick = { () => handleAboutClick(item['name'])}> {item['name']}</span>
-                      ))}
-                    </div>
-                      <div class = 'modal-car-dropdown'>
+              return <div class = 'modal-model-container'>
+                      <div class = 'modal-model-text'>
+                        {aboutItems.map((item,index) => (
+                          <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
+                          onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
+                        ))}
                       </div>
-                    </div>;
+                        {showRight ? 
+                          <div class = 'modal-model-image-container'>
+                            <img
+                              src = {imageShown}
+                              class = 'modal-model-image'
+                            /> 
+                          </div>
+                        : <></>}
+                      </div>;
             default:
               return null;
           }
