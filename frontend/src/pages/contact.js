@@ -17,9 +17,9 @@ const Contact = ( {} ) => {
             <input type="text" class= 'lined-input' id="fname" placeholder='*First Name' required />
             <input type="text" class= 'lined-input' id="lname" placeholder='*Last Name' required />
             <input type="text" class= 'lined-input' id="email" placeholder='*Email' required />
-            <textarea class='boxed-input' id="comment" placeholder='*Comments' rows='7' required />
+            <textarea class='boxed-input' id="comment" placeholder='*Message' rows='7' required />
           </div>
-          <button type="submit">Submit</button>
+          <button class ='block-button' type="submit">Submit</button>
         </form>
         <div class = 'sign-in'>
 

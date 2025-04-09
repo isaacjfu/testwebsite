@@ -44,6 +44,10 @@ h2{
 h3 {
   font-size: 26px;
 }
+textarea{
+  font-family: inherit;
+  font-size:14px;
+}
 .block-button {
   display:block;
   width:20%;
@@ -713,15 +717,14 @@ h3 {
   padding: 10px;
   margin-top: 40px;
   float:right;
-  background-color: white;
-  color: black;
-  border: 2px solid grey;
-  border-radius: 5px;
+  background-color: var(--secondary);
+  color: white;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .request-form > button:hover {
   background-color: var(--tertiary);
+  color:black;
 }
 .request-form-radio-group-card-label{
   margin:5px 10px;
