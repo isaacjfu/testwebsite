@@ -1,6 +1,7 @@
 import '../App.css';
 import Header from '../components/header.js'
 import Footer from '../components/footer.js'
+import History from '../components/history.js'
 import {useState,useEffect,useRef} from 'react';
 
 import top_image from '../resources/about_top.jpg'
@@ -15,6 +16,7 @@ import visionImage2 from '../resources/maybe.jpg'
 import visionImage3 from '../resources/lightning.gif'
 import officebuilding from '../resources/office_building.jpg'
 import officebuilding2 from '../resources/office_building2.webp'
+
 const StaffCard = ( {item} ) => {
 
   return (
@@ -69,6 +71,7 @@ const About = ( {} ) => {
             class = 'about-img-card'
           />
         </div>
+        <History />
         <div class = 'about-subcontainer'>
           <div class = 'about-card'>
             <div class = 'homepage-text-card'>

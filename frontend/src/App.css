@@ -192,6 +192,7 @@ textarea{
   display:flex;
   flex-direction: row;
   height:100%;
+
 }
 .modal-model-text{
   display:flex;
@@ -614,6 +615,160 @@ textarea{
   height:60%;
   width:90%;
 }
+.timeline-container {
+  position: relative; /* Establishes positioning context */
+  padding: 40px 20px; /* Add some padding around the timeline */
+  max-width: 900px; /* Max width for readability */
+  margin: 0 auto; /* Center the timeline */
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: var(--secondary); 
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px; 
+  z-index: 1; 
+}
+
+/* Container for each timeline item */
+.timeline-item {
+  padding: 10px 40px; /* Space around content, space from center line */
+  position: relative;
+  background-color: inherit; /* Transparent background */
+  width: 50%; /* Each item takes half the width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-bottom: 30px; /* Space between items */
+  z-index: 2; /* Above the line */
+}
+
+/* Position items on the left */
+.timeline-item.left {
+  left: 0;
+  padding-right: 60px; /* Extra padding to push content away from center */
+}
+
+/* Position items on the right */
+.timeline-item.right {
+  left: 50%;
+  padding-left: 60px; /* Extra padding to push content away from center */
+}
+
+/* The circle marker on the timeline */
+.timeline-marker {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--tertiary); /* White background */
+  border: 2px solid var(--secondary); /* Blue border like the image */
+  top: 20px; /* Adjust vertical position as needed */
+  border-radius: 50%;
+  z-index: 3; /* Above the line and item background */
+}
+
+/* Position marker for left items */
+.timeline-item.left .timeline-marker {
+  right: -8px; /* Position marker centered on the line */
+}
+
+/* Position marker for right items */
+.timeline-item.right .timeline-marker {
+  left: -8px; /* Position marker centered on the line */
+}
+
+/* The content card */
+.timeline-content {
+  padding: 20px;
+  position: relative;
+  display:flex;
+  flex-direction: row;
+}
+
+/* Style content elements */
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.timeline-content p {
+  margin: 0 0 10px 0;
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+}
+
+.timeline-content .images {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.timeline-content .images img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+/* The date element */
+.timeline-date {
+  position: absolute;
+  top: 18px; /* Align vertically with marker */
+  width: 60px; /* Fixed width for date */
+  text-align: center;
+  z-index: 2;
+}
+
+.timeline-date span {
+ display: block;
+}
+
+.timeline-date .day {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.timeline-date .month-year {
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+/* Position date for left items */
+.timeline-item.left .timeline-date {
+  right: -100px;
+}
+/* Position date for right items */
+.timeline-item.right .timeline-date {
+  left: -100px; 
+}
+/* Stem for left items */
+.timeline-item.left::before {
+  content: ' ';
+  height: 2px;
+  width: 60px; 
+  background-color: var(--secondary); 
+  position: absolute;
+  top: 27px; 
+  right: 0; 
+  z-index: 1;
+}
+
+/* Stem for right items */
+.timeline-item.right::before {
+  content: ' ';
+  height: 2px;
+  width: 60px; 
+  background-color: var(--secondary);
+  position: absolute;
+  top: 27px; 
+  left: 0; 
+  z-index: 1;
+}
+
 .grid-card {
   display:flex;
   flex-direction: column;

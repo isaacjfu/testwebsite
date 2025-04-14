@@ -26,9 +26,6 @@ const ModelModal = ({setClose, clickedModal}) => {
   const aboutItems = [{
     name: 'Our Company',
     img: about1
-  },{
-    name: 'Our History',
-    img: about2
   }, {
     name: 'Contact Us',
     img: about3
@@ -76,9 +73,6 @@ const ModelModal = ({setClose, clickedModal}) => {
       case 'Contact Us':
         navigate('/contact')
         break;
-      case 'Our History':
-        navigate('/history')
-        break;
       default:
         return
     }
@@ -93,46 +87,38 @@ const ModelModal = ({setClose, clickedModal}) => {
   return (
     <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
         <span onClick ={handleClick} class = 'modal-close'> X </span>
-        {(() => {
-          switch (clickedModal) {
-            case 'model':
-              return <div class = 'modal-model-container'>
-                        <div class = 'modal-model-text'>
-                          {modelItems.map((item,index) => (
-                            <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
-                            onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
-                          ))}
-                        </div>
-                        {showRight ? 
-                          <div class = 'modal-model-image-container'>
-                            <img
-                              src = {imageShown}
-                              class = 'modal-model-image'
-                            /> 
-                          </div>
-                        : <></>}
-                      </div>
-            case 'about':
-              return <div class = 'modal-model-container'>
-                      <div class = 'modal-model-text'>
-                        {aboutItems.map((item,index) => (
-                          <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
-                          onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
-                        ))}
-                      </div>
-                        {showRight ? 
-                          <div class = 'modal-model-image-container'>
-                            <img
-                              src = {imageShown}
-                              class = 'modal-model-image'
-                            /> 
-                          </div>
-                        : <></>}
-                      </div>;
-            default:
-              return null;
-          }
-        })()}
+          <div class = {`modal-model-container`}>
+            {(() => {
+              switch (clickedModal) {
+                case 'model':
+                  return <div class = 'modal-model-text'>
+                    {modelItems.map((item,index) => (
+                    <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
+                    onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
+                  ))}
+                  </div>
+                case 'about':
+                  return <div class = 'modal-model-text'>
+                    {aboutItems.map((item,index) => (
+                    <span key = {index} class = 'span-button' onClick = { () => handleModelClick(item['name'])}
+                    onMouseEnter={() => mouseHover(item['img'])} onMouseLeave = {() => mouseUnhover()}> {item['name']}</span>
+                  ))}
+                  </div>
+                default:
+                  return null
+                }
+              })()}
+            {showRight ? 
+              <div class = 'modal-model-image-container'>
+                <img
+                  src = {imageShown}
+                  class = 'modal-model-image'
+                /> 
+              </div>
+            : <></>}
+          </div>
+
+
     </div>
   );
 

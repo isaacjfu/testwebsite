@@ -7,7 +7,6 @@ import TestDrive from './pages/TestDrive.js'
 import Spyder from './pages/spyder.js'
 import Commendatore from './pages/commendatore.js';
 import Imperator from './pages/imperator.js';
-import History from './pages/history.js'
 function App() {
   return (
     <Router>
@@ -20,7 +19,6 @@ function App() {
           <Route path="/commendatore" element={<Commendatore/>} />
           <Route path="/imperator" element={<Imperator/>} />
           <Route path="/testDrive" element={<TestDrive/>} />
-          <Route path="/history" element={<History/>}/>
         </Routes>
       </div>
     </Router>
