@@ -2,7 +2,7 @@ import '../App.css';
 import Header from './header.js'
 import Footer from './footer.js'
 import {useState,useEffect, useRef} from 'react';
-import hero_image from '../resources/hero2.jpg'
+import hero_image from '../resources/hero4.jpg'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import AccordionMenu from './accordionMenu.js'
 import Carousel from './carousel.js';

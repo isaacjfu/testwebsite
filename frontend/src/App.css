@@ -518,6 +518,7 @@ textarea{
   object-fit: contain;
 }
 .about-subcontainer{
+  width:100%;
   display:flex;
   flex-direction: column;
   gap:100px;
@@ -618,7 +619,7 @@ textarea{
 .timeline-container {
   position: relative; /* Establishes positioning context */
   padding: 40px 20px; /* Add some padding around the timeline */
-  max-width: 900px; /* Max width for readability */
+  max-width: 100%; /* Max width for readability */
   margin: 0 auto; /* Center the timeline */
 }
 
@@ -687,7 +688,12 @@ textarea{
   display:flex;
   flex-direction: row;
 }
+.timeline-image{
 
+}
+.timeline-description{
+
+}
 /* Style content elements */
 .timeline-content h3 {
   margin-top: 0;
@@ -718,7 +724,6 @@ textarea{
 /* The date element */
 .timeline-date {
   position: absolute;
-  top: 18px; /* Align vertically with marker */
   width: 60px; /* Fixed width for date */
   text-align: center;
   z-index: 2;
@@ -727,15 +732,9 @@ textarea{
 .timeline-date span {
  display: block;
 }
-
-.timeline-date .day {
+.timeline-date .month-year {
   font-size: 1.4em;
   font-weight: bold;
-}
-
-.timeline-date .month-year {
-  font-size: 0.8em;
-  margin-top: 2px;
 }
 /* Position date for left items */
 .timeline-item.left .timeline-date {

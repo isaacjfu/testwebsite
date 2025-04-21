@@ -1,38 +1,65 @@
 import '../App.css';
 import {useState,useEffect, useRef} from 'react';
-import test_image from '../resources/1993isdera.jpg'
+import image_1 from '../resources/history_eratorGTE.jpg'
+import image_2 from '../resources/history_cw311_2.jpg'
+import image_4 from '../resources/history_imperator108.jpg'
+import image_5 from '../resources/history_commendatore112i.jpg'
+import image_6 from '../resources/history_auto.jpg'
+import image_7 from '../resources/history_commendatoreGT.jpg'
 export const timelineData = [
   {
     id: 1,
-    title: "Office Inauguration Function",
-    description: "Started journey with new location",
-    date: "Dec 01 2020", // Keep date format consistent
-    image: test_image // Optional
+    title: "Erator GTE ",
+    description: "Eberhard Schulz designs and builds the Erator GTE in his garage, and showcases it to Porsche and Mercedes Benz",
+    date: "Dec 1969", // Keep date format consistent
+    image: image_1 // Optional
   },
   {
     id: 2,
-    title: "Reached New record",
-    description: "Life time access members from D&D Business Admission Form in India",
-    date: "Sept 16 2020",
+    title: "Mercedes-Benz CW311",
+    description: "Schulz collaborates with b&b to finish the design on the Mercedes-Benz CW311",
+    date: "Sept 1978",
+    image: image_2
   },
   {
     id: 3,
-    title: "Design Meetup",
-    description: "This is where it all goes down. You will compete head to head with your friends and rivals. Get ready!",
-    date: "Sept 12 2020",
+    title: "Eberhard Schulz founds Isdera",
+    description: "Spyder This is where it all goes down. You will compete head to head with your friends and rivals. Get ready!",
+    date: "Sept 1982",
   },
     {
     id: 4,
-    title: "New People joined with our journey",
-    description: "John Smith, Designer",
-    date: "Aug 20 2020",
-    avatar: "/path/to/avatar.jpg" // Optional avatar
+    title: "Imperator 108i",
+    description: "",
+    date: "Aug 1984",
+    image: image_4
   },
    {
     id: 5,
-    title: "Employee photoshoot",
+    title: "Commendatore 112i",
     description: "For website redesign",
-    date: "Jul 18 2020",
+    date: "Jul 1993",
+    image: image_5
+  },
+  {
+    id: 6,
+    title: "Autobahnkurier 116i",
+    description: "",
+    date: "Sept 2006",
+    image: image_6
+  },
+  {
+    id: 7,
+    title: "Commendatore GT",
+    description: "",
+    date: "July 2018",
+    image: image_7
+  },
+  {
+    id: 8,
+    title: "Acquistion by Xinghiu Automotive Group",
+    description: "",
+    date: "",
   }
 ];
 const formatDate = (dateString) => {
@@ -56,30 +83,29 @@ const TimelineItem = ({ data, side }) => {
     <div class={`timeline-item ${side}`}>
       <div class="timeline-marker"></div>
       <div class="timeline-date">
-        <span class="day">{day}</span>
         <span class="month-year">{monthYear}</span>
       </div>
       <div class="timeline-content">
         {(side === 'left') ?
          <>              
           {data.image && (
-          <div>
+          <div class ='timeline-image'>
             <img src = {data.image}/>
           </div>
           )}    
-          <div>
+          <div class = 'timeline-description'>
             <h3>{data.title}</h3>
             {data.description && <p>{data.description}</p>}
           </div>
           </> 
           :
           <>        
-            <div>
+            <div class = 'timeline-description'>
               <h3>{data.title}</h3>
               {data.description && <p>{data.description}</p>}
             </div>
             {data.image && (
-              <div>
+              <div class ='timeline-image'>
                 <img src = {data.image}/>
               </div>
             )}
