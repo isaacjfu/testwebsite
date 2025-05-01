@@ -12,6 +12,18 @@ import testDriveImage from '../resources/test_drive1.jpg'
 const Home = ( {currentView} ) => {
     let navigate = useNavigate()
     const scrollContainerRef = useRef(null)
+    const text = {
+        home : {
+            title : "Isdera Motors",
+            content: 'Isdera stands for <strong>I</strong>ngenieurbüro für <b>S</b>tyling, \
+             <b>De</b>sign und <b>Ra</b>cing. We aim to combine engineering ingenuity with style, design,\
+             and racing. Founded in 1982 by former Porsche engineer Eberhard Schulz, Isdera set a standard \
+             for uncompromising performance and handcrafted precision. Every Isdera vehicle is a statement — \
+             built to order, shaped by innovation, and steeped in racing spirit. From our first Spyder series to\
+             today’s Commendatore GT, our legacy bridges timeless design with forward-thinking technology.',
+            sub_content: 'Welcome to the intersection of heritage and the future.'
+        }
+    }
     const handleAboutClick = ()  => {
         navigate('/about')
     }
@@ -39,20 +51,15 @@ const Home = ( {currentView} ) => {
             </div>
             <div class = 'fixed-container' >
                 <div class = 'centered-text-card'>
-                    <h2> Isdera Motors </h2>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
-                    <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                    anim id est laborum.</p>
+                    <h2> {text.home.title} </h2>
+                    <p dangerouslySetInnerHTML={{__html: text.home.content}} />
+                    <p> {text.home.sub_content}</p>
                     <button 
                         class = 'block-button'
                         onClick ={handleAboutClick}
                         style = {{width: '15%'}}
                         > 
-                        About Isdera </button>
+                        Learn More </button>
                 </div>
             </div>
             <div class = 'fixed-container offset'>

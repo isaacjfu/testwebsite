@@ -11,9 +11,9 @@ import thomasJefferson from '../resources/thomasjefferson.webp'
 import jamesMadison from '../resources/jamesmadison.webp'
 import jamesMonroe from '../resources/jamesmonroe.webp'
 import johnQAdams from '../resources/johnqadams.webp'
-import visionImage from '../resources/manycars.jpg'
-import visionImage2 from '../resources/maybe.jpg'
-import visionImage3 from '../resources/lightning.gif'
+import valuesImage from '../resources/values1.jpg'
+import valuesImage2 from '../resources/values2.jpg'
+import valuesImage3 from '../resources/values3.jpg'
 import officebuilding from '../resources/office_building.jpg'
 import officebuilding2 from '../resources/office_building2.webp'
 
@@ -47,15 +47,43 @@ const OfficeCard = ({item}) =>{
   )
 }
 const About = ( {} ) => {
-  let staff_arr = [{name: 'George Washington', title: 'Chief Executive Officer', image: georgeWashington},
+  const staff_arr = [{name: 'George Washington', title: 'Chief Executive Officer', image: georgeWashington},
     {name:'John Adams',title:'Chief Technology Officer',image: johnAdams},
     {name:'Thomas Jefferson', title: 'Chief Marketing Officer', image:thomasJefferson},
     {name: 'James Madison', title: 'Chief Human Resources Officer', image: jamesMadison},
     {name: 'James Monroe', title: 'Chief Security Officer', image:jamesMonroe},
     {name: 'John Quincy Adams', title: 'Chief Financial Officer', image:johnQAdams}]
-  let office_arr = [{place: 'Walnut', address: '18573 Rowland Dr.', image: officebuilding},
+  const office_arr = [{place: 'Walnut', address: '18573 Rowland Dr.', image: officebuilding},
     {place: 'Shanghai', address: '1930 Shanghai Dr.', image: officebuilding2}
   ] 
+  const text ={
+    header :{
+      title: 'About Isdera'
+    },
+    vision : {
+      title: 'Our Vision',
+      content: 'To craft the world’s most exclusive and luxurious sports\
+       cars. Each vehicle is a masterpiece of visionary design, meticulous\
+        craftsmanship, and uncompromising performance. Our mission is to \
+        deliver a truly bespoke driving experience for those who accept nothing \
+        less than the extraordinary.'
+    },
+    values :{
+      title: 'Our Values',
+      sub1: 'Innovation',
+      sub1content: 'Driven by a relentless pursuit of progress, we fuse cutting-edge\
+       technology with visionary design. Innovation is not an option—it’s the engine \
+       that propels us beyond convention and into the future of performance.',
+      sub2: 'Individuality',
+      sub2content: 'At Isdera, every creation is a singular expression of its\
+      owner’s vision. We believe in celebrating uniqueness, crafting each vehicle \
+      as an embodiment of personal identity and uncompromising taste.',
+      sub3: 'Craftsmanship',
+      sub3content: 'Handbuilt with meticulous attention to detail, every Isdera is a\
+      testament to artisanal excellence. Our commitment to craftsmanship ensures that \
+      each car is not just a car, but a masterpiece.'
+    }
+  }
   const [staff, setStaff] = useState(staff_arr)
   const [offices,setOffices] = useState(office_arr)
   const scrollContainerRef = useRef(null)
@@ -64,7 +92,7 @@ const About = ( {} ) => {
         <Header scrollContainerRef = {scrollContainerRef}/>
         <div class = 'about-header-card'>
           <h1 class = "about-overlay">
-              About Isdera
+              {text.header.title}
           </h1>
           <img
             src = {top_image}
@@ -74,52 +102,49 @@ const About = ( {} ) => {
         <History />
         <div class = 'about-subcontainer'>
           <div class = 'about-card'>
-            <div class = 'homepage-text-card'>
-              <h2> Our Vision </h2>
-              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <div class = 'about-text-card'>
+              <h2> {text.vision.title} </h2>
+              <p> {text.vision.content}</p>
             </div>
           </div>
           <div class ='about-card'>
-            <h2> Our Values </h2>
+            <h2> {text.values.title} </h2>
             <div class = 'about-card-three'>
               <div class = 'about-card-three-card'>
-                <img
-                  src = {visionImage}
-                  class = 'about-card-three-card-img'
-                />
-                <h3>Lorem ipsum</h3>
-                <p>
-                Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
+                <div class = 'about-card-three-card-img-container'>
+                  <img
+                      src = {valuesImage}
+                      class = 'about-card-three-card-img'
+                    />
+                </div>
+                <div class = 'about-card-three-card-text-container'>
+                  <h3> {text.values.sub1} </h3>
+                  <p> {text.values.sub1content} </p>
+                </div>
               </div>
               <div class = 'about-card-three-card'>
+                <div class = 'about-card-three-card-img-container'>
                   <img
-                    src = {visionImage2}
-                    class = 'about-card-three-card-img'
-                  />
-                    <h3>Lorem ipsum</h3>
-                  <p>
-                  Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
+                      src = {valuesImage2}
+                      class = 'about-card-three-card-img'
+                    />
+                </div>
+                <div class = 'about-card-three-card-text-container'>
+                  <h3> {text.values.sub2} </h3>
+                  <p> {text.values.sub2content} </p>
+                </div>
               </div>            
               <div class = 'about-card-three-card'>
+                <div class = 'about-card-three-card-img-container'>
                   <img
-                    src = {visionImage3}
-                    class = 'about-card-three-card-img'
-                  />
-                  <h3>Lorem ipsum</h3>
-                  <p>
-                  Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
+                      src = {valuesImage3}
+                      class = 'about-card-three-card-img'
+                    />
+                </div>
+                <div class = 'about-card-three-card-text-container'>
+                  <h3> {text.values.sub3} </h3>
+                  <p> {text.values.sub3content} </p>
+                </div>
               </div>
             </div>
           </div>

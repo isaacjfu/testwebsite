@@ -14,11 +14,11 @@ const ModelModal = ({setClose, clickedModal}) => {
   const [showRight, setShowRight] = useState(false)
   const [imageShown, setImageShown] = useState(null)
   const modelItems = [{
-    name: 'Commendatore',
-    img: commendatore
-  }, {
-    name: 'Imperator',
+    name: 'Imperator 108i',
     img: imperator
+  }, {
+    name: 'Commendatore GT',
+    img: commendatore
   }, {
     name: 'Spyder',
     img: spyder
@@ -58,10 +58,10 @@ const ModelModal = ({setClose, clickedModal}) => {
   }
   const handleModelClick = (model) => {
     switch (model) {
-      case 'Commendatore':
+      case 'Commendatore GT':
         navigate('/commendatore')
         break;
-      case 'Imperator':
+      case 'Imperator 108i':
         navigate('/imperator')
         break;
       case 'Spyder':
