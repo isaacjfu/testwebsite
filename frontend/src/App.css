@@ -1024,9 +1024,7 @@ input[type='radio']{
   align-items: center;
   justify-content: center;
 }
-.request-form > h2{
-  text-align: center;
-}
+
 
 @keyframes modalFadeIn {
   0% {

@@ -8,14 +8,15 @@ const Carousel = ({}) => {
     let navigate = useNavigate()
     const cards = [
         {image: card_1, name: 'Commendatore GT', navigate: '/commendatore',
-             text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua`},
+             text: `Engineered for uncompromising excellence, the Isdera Commendatore
+              GT redefines bespoke automotive luxury with striking design and peerless 
+              performance.`},
         {image: card_2, name: 'Imperator 108i', navigate: '/imperator',
-            text:`Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat`},
+            text:`Crafted for pure driving exhilaration, the Isdera Imperator 108i embodies
+             a bold evolution in handcrafted supercar design.`},
         {image: card_3, name: 'Spyder', navigate: '/spyder',
-            text:`Duis aute irure dolor in reprehenderit in voluptate velit esse
-             cillum dolore eu fugiat nulla pariatur.`}
+            text:`Designed for open-air freedom, the Isdera Spyder marks a thrilling new 
+            chapter in bespoke roadster performance.`}
     ]
     const [index, setIndex] = useState(0);
     const [fade,setFade] = useState(false);

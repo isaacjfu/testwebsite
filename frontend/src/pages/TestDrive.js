@@ -32,13 +32,16 @@ const TestDriveCard = ( {car_name, car_image, selectedCar, setSelectedCar} ) => 
 const TestDrive = ( {} ) => {
   const [selectedCar, setSelectedCar] = useState("")
   const scrollContainerRef = useRef(null)
-
+  const text = {
+    title: 'Request a test drive',
+    content: ''
+  }
   return (
     <div class = 'homepage-container' ref = {scrollContainerRef}>
         <Header scrollContainerRef = {scrollContainerRef}/>
         <div class = 'homepage-card'>
           <div class = 'homepage-text-header-card'>
-            <h1> Request a Test Drive </h1>
+            <h1> {text.title} </h1>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure

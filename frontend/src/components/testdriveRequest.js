@@ -1,18 +1,29 @@
 import '../App.css';
 
 const TestDriveRequest = ( {} ) => {
-
+    const text = {
+        dealership: {
+            title: 'Select your preferred dealership',
+            content: 'Search for your preferred location'
+        },
+        details: {
+            title: 'Your personal details',
+            content: 'Please provide your contact details and some information about yourself'
+        },
+        preferences: {
+            title: 'Contact preferences',
+            content: 'Let us know how you would like us to reach out.'
+        }
+    }
   return (
     <form class="request-form">
-        <h1>Select your preferred dealership</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.</p>
+        <h2>{text.dealership.title}</h2>
+        <p>{text.dealership.content}.</p>
         <div class="request-form-group">
             <input type="text" class= 'lined-input'  id="dealership" placeholder='*Select your dealership' required />
         </div>
-        <h1>Your personal details</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.</p>
+        <h2>{text.details.title}</h2>
+        <p>{text.details.content}</p>
         <div class="request-form-group">
             <input type="text" class= 'lined-input' id="fname" placeholder='*First Name' required />
             <input type="text" class= 'lined-input' id="lname" placeholder='*Last Name' required />
@@ -21,9 +32,8 @@ const TestDriveRequest = ( {} ) => {
             <input type="text" class= 'lined-input' id="city" placeholder='*City' required />
             <input type="text" class= 'lined-input' id="location" placeholder='*Location' required />
         </div>
-        <h1>Contact preferences</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua.</p>
+        <h2>{text.preferences.title}</h2>
+        <p>{text.preferences.content}</p>
         <div class="request-form-radio-group">
             <div class = 'request-form-radio-group-card'>
                 <p>Email</p>

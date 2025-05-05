@@ -4,15 +4,19 @@ import {useState,useEffect, useRef} from 'react';
 import Footer from '../components/footer.js'
 const Contact = ( {} ) => {
   const scrollContainerRef = useRef(null)
+  const text  = {
+    header: 'Contact Us',
+    subcontent: 'For personalized assistance, bespoke commissions, or investment opportunities,\
+     please contact our team for a confidential consultation.'
+  }
   return (
     <div class = 'homepage-container' ref = {scrollContainerRef}>
         <Header scrollContainerRef={scrollContainerRef} />     
         <div class = 'header-filler'>
-          <h2>Contact Us</h2>
+          <h2> {text.header}</h2>
         </div>
         <form class='request-form'>
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. </p>
+          <p> {text.subcontent} </p>
           <div class="request-form-group">
             <input type="text" class= 'lined-input' id="fname" placeholder='*First Name' required />
             <input type="text" class= 'lined-input' id="lname" placeholder='*Last Name' required />

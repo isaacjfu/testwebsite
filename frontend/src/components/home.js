@@ -14,7 +14,7 @@ const Home = ( {currentView} ) => {
     const scrollContainerRef = useRef(null)
     const text = {
         home : {
-            title : "Isdera Motors",
+            title : 'Isdera Motors',
             content: 'Isdera stands for <strong>I</strong>ngenieurbüro für <b>S</b>tyling, \
              <b>De</b>sign und <b>Ra</b>cing. We aim to combine engineering ingenuity with style, design,\
              and racing. Founded in 1982 by former Porsche engineer Eberhard Schulz, Isdera set a standard \
@@ -22,6 +22,11 @@ const Home = ( {currentView} ) => {
              built to order, shaped by innovation, and steeped in racing spirit. From our first Spyder series to\
              today’s Commendatore GT, our legacy bridges timeless design with forward-thinking technology.',
             sub_content: 'Welcome to the intersection of heritage and the future.'
+        },
+        request : {
+            title: 'Request a Test Drive',
+            content: 'Experience the unparalleled performance firsthand. Contact us to arrange \
+            a private test drive tailored to your schedule and preferences.'
         }
     }
     const handleAboutClick = ()  => {
@@ -72,9 +77,8 @@ const Home = ( {currentView} ) => {
                         class = 'side-by-side-image'
                     />
                     <div class = 'side-by-side-text'>
-                        <h2> Request a Test Drive</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. </p>
+                        <h2>{text.request.title}</h2>
+                        <p> {text.request.content} </p>
                         <button
                             class = 'block-button'
                             onClick = {handleRequestClick}
