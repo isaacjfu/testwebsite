@@ -2,6 +2,8 @@ import '../App.css';
 import Header from '../components/header.js'
 import Footer from '../components/footer.js'
 import History from '../components/history.js'
+import Values from '../components/values.js'
+import AboutCarousel from '../components/about_carousel.js';
 import {useState,useEffect,useRef} from 'react';
 
 import top_image from '../resources/about_top.jpg'
@@ -11,9 +13,6 @@ import thomasJefferson from '../resources/thomasjefferson.webp'
 import jamesMadison from '../resources/jamesmadison.webp'
 import jamesMonroe from '../resources/jamesmonroe.webp'
 import johnQAdams from '../resources/johnqadams.webp'
-import valuesImage from '../resources/values1.jpg'
-import valuesImage2 from '../resources/values2.jpg'
-import valuesImage3 from '../resources/values3.jpg'
 import officebuilding from '../resources/office_building.jpg'
 import officebuilding2 from '../resources/office_building2.webp'
 
@@ -107,51 +106,12 @@ const About = ( {} ) => {
               <p> {text.vision.content}</p>
             </div>
           </div>
-          <div class ='about-card'>
-            <h2> {text.values.title} </h2>
-            <div class = 'about-card-three'>
-              <div class = 'about-card-three-card'>
-                <div class = 'about-card-three-card-img-container'>
-                  <img
-                      src = {valuesImage}
-                      class = 'about-card-three-card-img'
-                    />
-                </div>
-                <div class = 'about-card-three-card-text-container'>
-                  <h3> {text.values.sub1} </h3>
-                  <p> {text.values.sub1content} </p>
-                </div>
-              </div>
-              <div class = 'about-card-three-card'>
-                <div class = 'about-card-three-card-img-container'>
-                  <img
-                      src = {valuesImage2}
-                      class = 'about-card-three-card-img'
-                    />
-                </div>
-                <div class = 'about-card-three-card-text-container'>
-                  <h3> {text.values.sub2} </h3>
-                  <p> {text.values.sub2content} </p>
-                </div>
-              </div>            
-              <div class = 'about-card-three-card'>
-                <div class = 'about-card-three-card-img-container'>
-                  <img
-                      src = {valuesImage3}
-                      class = 'about-card-three-card-img'
-                    />
-                </div>
-                <div class = 'about-card-three-card-text-container'>
-                  <h3> {text.values.sub3} </h3>
-                  <p> {text.values.sub3content} </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Values text = {text} />
+          <AboutCarousel/>
           <div class = 'about-card'>
             <h2>Our Staff</h2>
             <div class = 'about-grid-container'>
-{              staff.map((item) => (
+              {staff.map((item) => (
                   <StaffCard item = {item}/>
               ))}
             </div>
