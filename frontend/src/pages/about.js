@@ -107,10 +107,10 @@ const About = ( {} ) => {
             </div>
           </div>
           <Values text = {text} />
-          <AboutCarousel/>
+          {/* <AboutCarousel/> */}
           <div class = 'about-card'>
             <h2>Our Staff</h2>
-            <div class = 'about-grid-container'>
+            <div class = 'about-grid-container-staff'>
               {staff.map((item) => (
                   <StaffCard item = {item}/>
               ))}
@@ -118,7 +118,7 @@ const About = ( {} ) => {
           </div>
           <div class = 'about-card'>
             <h2>Our Offices</h2>
-            <div class = 'about-grid-container'>
+            <div class = 'about-grid-container-offices'>
               {offices.map((item) => (
                 <OfficeCard item = {item}/>
               ))}

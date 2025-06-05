@@ -85,7 +85,13 @@ const ModelModal = ({setClose, clickedModal}) => {
   }, []);
 
   return (
-    <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
+    <div>
+      {(clickedModal == 'hamburger') ? 
+      <div class = 'modal-hamburger'>
+        
+      </div> 
+      : 
+      <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
         <span onClick ={handleClick} class = 'modal-close'> X </span>
           <div class = {`modal-model-container`}>
             {(() => {
@@ -117,9 +123,11 @@ const ModelModal = ({setClose, clickedModal}) => {
               </div>
             : <></>}
           </div>
-
-
+        </div>
+          }
+      
     </div>
+    
   );
 
 }

@@ -1,8 +1,8 @@
 :root{
   --header:#e5e3dc;
   --primary: #aeaca5;
-  --secondary: #005b48;
-  --tertiary: #faf1ca;
+  --secondary: #65676d;
+  --tertiary: #87c3e8;
   --text-color-light: white;
   --text-color-dark: black;
 }
@@ -123,19 +123,30 @@ textarea{
   animation: fadeInOut 1s ease-in forwards;
 }
 .header-container{
-  scroll-snap-align: start;
   position: relative;
   color:black;
   background-color: var(--header);
   display: flex;
   width:100%;
-  height:10%;
+  height:5vh;
   align-content:center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-weight: 500;
   letter-spacing: 1.5px;
   z-index:5;
   transition: transform 0.3s ease-in-out; /* Smooth slide-up effect */
+}
+.header-subcontainer{
+  width:90%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-image{
+  height:100%;
+  width:auto;
+  object-fit:contain;
+  cursor: pointer;
 }
 .header-left{
   display:flex;
@@ -157,6 +168,11 @@ textarea{
   align-items: center;
   margin-right:5%;
   gap: 30px;
+}
+.header-logo{
+  height:auto;
+  width:8em;
+  cursor: pointer;
 }
 .header-button{
   display:inline-block;
@@ -247,10 +263,16 @@ textarea{
   text-decoration: underline;
   cursor:pointer;
 }
-.header-logo{
-  height:auto;
-  width:8em;
-  cursor: pointer;
+.modal-hamburger{
+  display:flex;
+  flex-direction: column;
+  position: absolute;
+  z-index:5;
+  height:100vh;
+  width: 100vw;
+}
+.modal-hamburger-span{
+
 }
 .span-button{
   display: inline-block; 
@@ -538,23 +560,16 @@ textarea{
   display:flex;
   flex-direction: column;
 }
-.about-grid-container {
+.about-grid-container-staff{
   width:100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-
-@media (max-width: 800px) {
-  .grid-container {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-  }
-}
-
-@media (max-width: 500px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
+.about-grid-container-offices{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
 }
 .about-header-card{
   scroll-snap-align: start;
@@ -1092,6 +1107,18 @@ input[type='radio']{
 .about-carousel-right{
   right:10px;
 }
+
+@media(min-width:768px) {
+  .header-container{
+    justify-content: space-between;
+    scroll-snap-align: start;
+    height:10vh
+  }
+}
+@media(min-width: 1024px) {
+
+}
+
 @keyframes modalFadeIn {
   0% {
     opacity:0;
