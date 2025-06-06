@@ -52,7 +52,7 @@ const Header = ( {white, setWhite,scrollContainerRef} ) => {
 
   return (
     <div>
-      {(mediaType == 'isMobile') ? 
+      {(mediaType === 'isMobile') ? 
       (<div class = 'header-container'>
         <div class = 'header-subcontainer'>
           <img

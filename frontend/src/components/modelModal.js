@@ -83,13 +83,15 @@ const ModelModal = ({setClose, clickedModal}) => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-
+      // <div class = 'modal-hamburger'>
+      //   <span>HELLLLLLO</span>
+      // </div> 
   return (
     <div>
-      {(clickedModal == 'hamburger') ? 
-      <div class = 'modal-hamburger'>
-        
-      </div> 
+      {(clickedModal === 'hamburger') ? 
+      <div class = 'model-hamburger'>
+        <span>HELLO FROM HAMBURGER</span>
+      </div>
       : 
       <div class = "modal fade-in" onAnimationEnd={handleAnimationEnd}>
         <span onClick ={handleClick} class = 'modal-close'> X </span>
